@@ -34,6 +34,12 @@ export default function Home() {
           <svg viewBox="0 0 16 16" className="w-6 h-6 text-slate-600 dark:text-slate-400" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
           </svg>
         </a>
+        <a href='https://www.instagram.com/_aatif_sheikh_/' target='_black' title='GitHub' className='grayscale hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  hover:scale-125 duration-300 '>
+         <Image src="/brands/icons8-insta.svg" alt="instagram" height={0} width={0} className='w-8'/>
+        </a>
+        <a href='https://twitter.com/aatif_9' target='_black' title='GitHub' className='grayscale hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  hover:scale-125 duration-300 '>
+         <Image src="/brands/icons8-twitter.svg" alt="instagram" height={0} width={0} className='w-8'/>
+        </a>
         <p className='flex p-2 grayscale hover:grayscale-0 transition-all text-fuchsia-600 dark:text-fuchsia-400 ease-in-out duration-300 hover:scale-110 cursor-pointer ' onClick={e => setOpenResume(!openResume)}><NewspaperIcon className='w-6 mr-1' /> Resume</p>
       </div>
       <Resume open={openResume} setOpen={setOpenResume} />

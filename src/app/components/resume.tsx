@@ -65,7 +65,7 @@ export default function Resume({ open, setOpen }: props) {
                                                 <p>Skills</p>
                                                 <div className='md:ml-2 mt-4'>
                                                     <p className='text-xs dark:text-slate-400 text-slate-500 italic'>Backend</p>
-                                                    <div className='grid md:grid-cols-12 grid-cols-6 gap-y-4 mt-4'>
+                                                    <div className='grid md:grid-cols-12 grid-cols-5 gap-y-4 mt-4'>
                                                         <div>
                                                             <a href="#">
                                                                 <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Javascript" src="/skills/icons8-javascript.svg" />
@@ -125,7 +125,7 @@ export default function Resume({ open, setOpen }: props) {
                                                 </div>
                                                 <div className='md:ml-2 mt-4'>
                                                     <p className='text-xs dark:text-slate-400 text-slate-500 italic'>Frontend</p>
-                                                    <div className='grid md:grid-cols-12 grid-cols-6 gap-y-4 mt-4'>
+                                                    <div className='grid md:grid-cols-12 grid-cols-5 gap-y-4 mt-4'>
                                                         <div>
                                                             <a href="#">
                                                                 <Image width={0} height={0} className='w-fit motion-safe:animate-[spin_5s_linear_infinite] hover:animate-none transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_1px_1px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="reactJS" src="/skills/icons8-react.svg" />
@@ -174,7 +174,7 @@ export default function Resume({ open, setOpen }: props) {
                                             </section>
                                             <section>
                                                 <p>Services</p>
-                                                <div className='grid md:grid-cols-12 grid-cols-6 gap-y-6'>
+                                                <div className='grid md:grid-cols-12 grid-cols-5 gap-y-6'>
                                                     <div>
                                                         <a href="#">
                                                             <picture>
