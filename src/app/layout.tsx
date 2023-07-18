@@ -2,8 +2,9 @@ import "../../styles/globals.scss"
 import { Inter } from 'next/font/google'
 import Nav from "./nav"
 import Footer from "./footer"
+import Image from 'next/image'
 
-const inter = Inter({ subsets: [ 'latin' ] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Hi, Aatif here!',
@@ -32,7 +33,12 @@ export default function RootLayout({
           {children}
           <Footer />
         </main>
-        <a target="_blank" className="absolute bottom-0" href="https://uptime.betterstack.com"><img style={{"width": "130px", "height": "52px"}} alt="Better Stack Website Monitoring" src="https://uptime.betterstack.com/assets/static_assets/badges/light.png" /></a>
+        <a target="_blank" className="absolute bottom-0" href="https://uptime.betterstack.com">
+          <picture>
+            <source srcSet={"https://uptime.betterstack.com/assets/static_assets/badges/dark.png"} media="(prefers-color-scheme: dark)" />
+            <Image width={130} height={52} alt="Better Stack Website Monitoring" src="https://uptime.betterstack.com/assets/static_assets/badges/light.png" />
+          </picture>
+        </a>
       </body>
     </html>
   )
