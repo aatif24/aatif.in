@@ -24,6 +24,7 @@ export default function RootLayout({
           type="image/<generated>"
           sizes="<generated>"
         />
+        <script src="https://uptime.betterstack.com/widgets/announcement.js" data-id="166520" async={true} type="text/javascript"></script>
       </head>
       <body className={`${inter.className} bg`}>
         <main className="font-mono flex flex-col min-h-screen mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
