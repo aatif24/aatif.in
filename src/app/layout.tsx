@@ -32,7 +32,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </main>
-        <a target="_blank" className="absoltute bottom-0" href="https://uptime.betterstack.com"><img style={{"width": "130px", "height": "52px"}} alt="Better Stack Website Monitoring" src="https://uptime.betterstack.com/assets/static_assets/badges/light.png" /></a>
+        <a target="_blank" className="absolute bottom-0" href="https://uptime.betterstack.com"><img style={{"width": "130px", "height": "52px"}} alt="Better Stack Website Monitoring" src="https://uptime.betterstack.com/assets/static_assets/badges/light.png" /></a>
       </body>
     </html>
   )
