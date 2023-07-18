@@ -45,7 +45,7 @@ export default function Nav(): ReactComponentElement<any> {
                                 <picture>
                                     <source srcSet={"/logo/logo-sm-white-no-bg.svg"} media="(prefers-color-scheme: dark)" />
                                     <Image
-                                        className="block h-8 w-auto transition-all ease-in-out  hover:scale-125 duration-300 "
+                                        className=" cursor-pointer block h-8 w-auto transition-all ease-in-out  hover:scale-125 duration-300 "
                                         width={0}
                                         height={0}
                                         src="/logo/logo-sm-black-no-bg.svg"

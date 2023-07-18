@@ -68,14 +68,14 @@ export default function Resume({ open, setOpen }: props) {
                                                     <div className='grid md:grid-cols-12 grid-cols-5 gap-y-4 mt-4'>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Javascript" src="/skills/icons8-javascript.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Javascript" src="/skills/icons8-javascript.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
                                                                 <picture>
                                                                     <source srcSet={"/skills/icons8-nodejs-white.svg"} media="(prefers-color-scheme: dark)" />
-                                                                    <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Node JS" src="/skills/icons8-nodejs.svg" />
+                                                                    <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Node JS" src="/skills/icons8-nodejs.svg" />
                                                                 </picture>
 
                                                             </a>
@@ -84,41 +84,41 @@ export default function Resume({ open, setOpen }: props) {
                                                             <a href="#">
                                                                 <picture>
                                                                     <source srcSet={"/skills/icons8-php-white.svg"} media="(prefers-color-scheme: dark)" />
-                                                                    <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="PHP" src="/skills/icons8-php.svg" />
+                                                                    <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="PHP" src="/skills/icons8-php.svg" />
                                                                 </picture>
 
                                                             </a>
                                                         </div>
                                                         <div> <a href="#">
-                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="TypeScript" src="/skills/icons8-typescript.svg" />
+                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="TypeScript" src="/skills/icons8-typescript.svg" />
                                                         </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="ExpressJS" src="/skills/icons8-express-js.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="ExpressJS" src="/skills/icons8-express-js.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="NestJS" src="/skills/icons8-nestjs.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="NestJS" src="/skills/icons8-nestjs.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="MongoDB" src="/skills/icons8-mongodb.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="MongoDB" src="/skills/icons8-mongodb.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
                                                                 <picture>
                                                                     <source srcSet={"/skills/icons8-mysql-white.svg"} media="(prefers-color-scheme: dark)" />
-                                                                    <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="MySql" src="/skills/icons8-mysql.svg" />
+                                                                    <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="MySql" src="/skills/icons8-mysql.svg" />
                                                                 </picture>
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Redis" src="/skills/icons8-redis.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Redis" src="/skills/icons8-redis.svg" />
                                                             </a>
                                                         </div>
                                                     </div>
@@ -128,45 +128,45 @@ export default function Resume({ open, setOpen }: props) {
                                                     <div className='grid md:grid-cols-12 grid-cols-5 gap-y-4 mt-4'>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit motion-safe:animate-[spin_5s_linear_infinite] hover:animate-none transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_1px_1px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="reactJS" src="/skills/icons8-react.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="reactJS" src="/skills/icons8-react.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Svelte" src="/skills/icons8-svelte.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Svelte" src="/skills/icons8-svelte.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="HTML5" src="/skills/icons8-html5.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="HTML5" src="/skills/icons8-html5.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Javascript" src="/skills/icons8-javascript.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Javascript" src="/skills/icons8-javascript.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
                                                                 <picture>
                                                                     <source srcSet={"/skills/icons8-jquery-white.svg"} media="(prefers-color-scheme: dark)" />
-                                                                    <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="JQuery" src="/skills/icons8-jquery.svg" />
+                                                                    <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="JQuery" src="/skills/icons8-jquery.svg" />
                                                                 </picture>
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="SASS" src="/skills/icons8-sass.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="SASS" src="/skills/icons8-sass.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Bootstrap" src="/skills/icons8-bootstrap.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Bootstrap" src="/skills/icons8-bootstrap.svg" />
                                                             </a>
                                                         </div>
                                                         <div>
                                                             <a href="#">
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Tailwing" src="/skills/icons8-tailwind-css.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Tailwing" src="/skills/icons8-tailwind-css.svg" />
                                                             </a>
                                                         </div>
                                                     </div>
@@ -179,38 +179,38 @@ export default function Resume({ open, setOpen }: props) {
                                                         <a href="#">
                                                             <picture>
                                                                 <source srcSet={"/skills/icons8-amazon-web-services-white.svg"} media="(prefers-color-scheme: dark)" />
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="AWS" src="/skills/icons8-amazon-web-services.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="AWS" src="/skills/icons8-amazon-web-services.svg" />
                                                             </picture>
 
                                                         </a>
                                                     </div>
                                                     <div>
                                                         <a href="#">
-                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="NPM" src="/skills/icons8-npm.svg" />
+                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="NPM" src="/skills/icons8-npm.svg" />
                                                         </a>
                                                     </div>
                                                     <div>
                                                         <a href="#">
                                                             <picture>
                                                                 <source srcSet={"/skills/icons8-github-white.svg"} media="(prefers-color-scheme: dark)" />
-                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="GitHub" src="/skills/icons8-github.svg" />
+                                                                <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="GitHub" src="/skills/icons8-github.svg" />
                                                             </picture>
                                                         </a>
                                                     </div>
                                                     <div>
                                                         <a href="#">
-                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Heroku" src="/skills/icons8-heroku.svg" />
+                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Heroku" src="/skills/icons8-heroku.svg" />
                                                         </a>
                                                     </div>
                                                     <div>
                                                         <a href="#">
-                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="JIRA" src="/skills/icons8-jira.svg" />
+                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="JIRA" src="/skills/icons8-jira.svg" />
                                                         </a>
                                                     </div>
                                                     <div>
                                                         <picture>
                                                             <source srcSet={"/skills/icons8-notion-white.svg"} media="(prefers-color-scheme: dark)" />
-                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_5px_rgba(51,65,85,0.50)]' alt="Notion" src="/skills/icons8-notion.svg" />
+                                                            <Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300 hover:scale-110 dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Notion" src="/skills/icons8-notion.svg" />
                                                         </picture>
                                                     </div>
                                                 </div>
