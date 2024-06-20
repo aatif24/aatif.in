@@ -3,27 +3,31 @@
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Calendar from './components/calendar';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
-import { Sun, Moon } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 export default function Home() {
 	const { theme, setTheme } = useTheme();
 
 	return (
 		<main className=" font-mono md:h-[90%] grid md:block items-center p-4 md:p-24 text-[#222831]	">
-			<div className="md:flex items-end gap-4 ">
+			<div className="md:flex transition-all duration-300 items-end gap-4 ">
 				<div className="flex">
 					<Image src="/photo2.jpg" alt="Aatif Shaikh" height={1000} width={1000} className='w-40  shadow-lg top-10 left-10 rounded-lg grayscale backdrop-opacity-5' />
 				</div>
 
-				<div className="mt-4 shadow-lg md:mt-0 flex flex-col space-y-2  bg-primary   rounded-lg p-8 font-norma">
+				<div className="mt-4 shadow-lg md:mt-0 flex flex-col space-y-2  bg-primary   rounded-lg p-8 font-norma relative">
 					<p className="text-4xl">Aatif Shaikh</p>
 					<p className="text-sm">Software Developer from Mumbai, India.
 						<br />Rock-solid experience in building complex applications with cutting-edge technologies.</p>
+
+
+					<a href={"/Aatif-Shaikh.pdf"} download={true} target='_black' title='GitHub' className='absolute top-2 right-2 hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  duration-300 '>
+						<Download className='w-6'/>
+					</a>
 				</div>
-				<div className="fixed w-full bottom-10 left-0 px-8 md:hidden h-10">
-					<div className="flex items-center justify-between">
+				<div className="fixed w-full bottom-10 left-0 px-8 md:hidden  h-10 ">
+					{/* <div className="flex items-center justify-between dark:shadow-[inset_0rem_0.2rem_0.4rem_0_rgb(59,76,77,1)] shadow-[inset_0rem_0.2rem_0.4rem_0_rgb(100,116,139,1)] px-4 py-2 rounded-full"> */}
+					<div className="flex items-center justify-between shadow-[0.625rem_0.625rem_0.875rem_0_rgb(225,226,228),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)] dark:shadow-[0.625rem_0.625rem_0.875rem_0_rgb(2,6,23,0.4),-0.5rem_-0.5rem_1.125rem_0_rgb(2,6,23,0.3)] px-4 py-2 rounded-full">
 						<a href='mailto:saatif24@gmail.com' target='_black' title='Mail' className='hover:grayscale-0 mr-2 transition-all ease-in-out  duration-300'>
 							<Image src="/brands/icons8-gmail.svg" alt="GMail" height={0} width={0} className='w-7' />
 						</a>
@@ -32,8 +36,8 @@ export default function Home() {
 						</a>
 						<a href='https://github.com/aatif24' target='_black' title='GitHub' className='hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  duration-300 '>
 							<picture>
-								<Image src={"/brands/icons8-github-white.svg"} alt="Github" height={0} width={0} className='w-0 dark:w-8 ' />
-								<Image src="/brands/icons8-github.svg" alt="Github" height={0} width={0} className='w-7 dark:w-0 ' />
+								{/* <Image src={"/brands/icons8-github-white.svg"} alt="Github" height={0} width={0} className='w-0 dark:w-8 ' /> */}
+								<Image src="/brands/icons8-github.svg" alt="Github" height={0} width={0} className='w-7   ' />
 							</picture>
 						</a>
 						<a href='https://www.instagram.com/aatifshaikh.91/' target='_black' title='GitHub' className='hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  duration-300 '>
@@ -46,6 +50,9 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
+			{/* <div className="fixed bottom-10 left-1/2 -translate-x-1/2">
+				<Command />
+			</div> */}
 
 			<div className="md:flesx hidden">
 				<div className="w-fit h-fit p-4 mt-4 rounded-lg  ">
