@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { cn } from '@/lib/utils';
 
 
-export default function Calendar({ className }: { className: string }) {
+export default function Calendar({ className }: { className?: string }) {
     useEffect(() => {
         (async function () {
             const cal = await getCalApi({});
@@ -22,5 +22,5 @@ export default function Calendar({ className }: { className: string }) {
     >
         <Image src="/calendar.svg" alt="instagram" height={0} width={0} className='w-7 dark:w-0' />
         <Image src="/calendar-white.svg" alt="instagram" height={0} width={0} className='dark:w-7 w-0' />
-    </button>;
+    </button>
 };
