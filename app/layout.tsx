@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} h-screen bg-slate-100 dark:bg-slate-800`}>
+      <body className={`${inter.className} h-screen  `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -28,6 +28,7 @@ export default function RootLayout({
           <Header />
           {children}
         </ThemeProvider>
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "317f93226c774eac83a48e90a31ee398"}'></script>
       </body>
     </html>
   );
