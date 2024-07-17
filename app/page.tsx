@@ -1,216 +1,100 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-import Image from 'next/image';
-import Calendar from './components/calendar';
-import { Download } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import Image from "next/image";
 
 export default function Home() {
-	const { theme, setTheme } = useTheme();
-
 	return (
-		<main className=" font-mono md:h-[90%] grid md:block items-center p-4 md:p-24 text-[#222831]	">
-			<div className="md:flex transition-all duration-300 items-end gap-4 ">
-				<div className="flex">
-					<Image src="/photo2.jpg" alt="Aatif Shaikh" height={1000} width={1000} className='w-40  shadow-lg top-10 left-10 rounded-lg grayscale backdrop-opacity-5' />
-				</div>
-
-				<div className="mt-4 shadow-lg md:mt-0 flex flex-col space-y-2  bg-primary   rounded-lg p-8 font-norma relative">
-					<p className="text-4xl">Aatif Shaikh</p>
-					<p className="text-sm">Software Developer from Mumbai, India.
-						<br />Rock-solid experience in building complex applications with cutting-edge technologies.</p>
-
-
-					<a href={"/Aatif-Shaikh.pdf"} download={true} target='_black' title='GitHub' className='absolute top-2 right-2 hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  duration-300 '>
-						<Download className='w-6'/>
-					</a>
-				</div>
-				<div className="fixed w-full bottom-10 left-0 px-8 md:hidden  h-10 ">
-					{/* <div className="flex items-center justify-between dark:shadow-[inset_0rem_0.2rem_0.4rem_0_rgb(59,76,77,1)] shadow-[inset_0rem_0.2rem_0.4rem_0_rgb(100,116,139,1)] px-4 py-2 rounded-full"> */}
-					<div className="flex items-center justify-between shadow-[0.625rem_0.625rem_0.875rem_0_rgb(225,226,228),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)] dark:shadow-[0.625rem_0.625rem_0.875rem_0_rgb(2,6,23,0.4),-0.5rem_-0.5rem_1.125rem_0_rgb(2,6,23,0.3)] px-4 py-2 rounded-full">
-						<a href='mailto:saatif24@gmail.com' target='_black' title='Mail' className='hover:grayscale-0 mr-2 transition-all ease-in-out  duration-300'>
-							<Image src="/brands/icons8-gmail.svg" alt="GMail" height={0} width={0} className='w-7' />
-						</a>
-						<a href='https://www.linkedin.com/in/aatif-shaikh-924086145/' title='LinkedIn' target='_black' className='hover:grayscale-0 mx-2 transition-all ease-in-out   duration-300'>
-							<Image src="/brands/icons8-linkedin.svg" alt="LinkedIn" height={0} width={0} className='w-8' />
-						</a>
-						<a href='https://github.com/aatif24' target='_black' title='GitHub' className='hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  duration-300 '>
-							<picture>
-								{/* <Image src={"/brands/icons8-github-white.svg"} alt="Github" height={0} width={0} className='w-0 dark:w-8 ' /> */}
-								<Image src="/brands/icons8-github.svg" alt="Github" height={0} width={0} className='w-7   ' />
-							</picture>
-						</a>
-						<a href='https://www.instagram.com/aatifshaikh.91/' target='_black' title='GitHub' className='hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  duration-300 '>
-							<Image src="/brands/icons8-insta.svg" alt="instagram" height={0} width={0} className='w-8' />
-						</a>
-						<a href='https://wa.me/919975856562' target='_black' title='GitHub' className='hover:grayscale-0 mx-2  rounded-full transition-all ease-in-out  duration-300 '>
-							<Image src="/brands/icons8-whatsapp.svg" alt="instagram" height={0} width={0} className='w-7' />
-						</a>
-						<Calendar />
-					</div>
+		<ScrollArea className="h-screen lg:px-12 lg:py-24 p-4 ">
+			<div className="px-4 lg:px-12">
+				<p className="text-xl py-4">What?</p>
+				<div className="grid md:grid-cols-2 gap-8">
+					<Card className="h-full  shadow-lg border border-primary/5 dark:border-primary/10">
+						<CardHeader>
+							<CardTitle>
+								Web Development
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>High-quality development of sites at the professional level.</p>
+						</CardContent>
+					</Card>
+					<Card className="h-full  shadow-lg border border-primary/5 dark:border-primary/10">
+						<CardHeader>
+							<CardTitle>
+								System Design
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Designing and developing systems for various industries.</p>
+						</CardContent>
+					</Card>
 				</div>
 			</div>
-			{/* <div className="fixed bottom-10 left-1/2 -translate-x-1/2">
-				<Command />
-			</div> */}
-
-			<div className="md:flesx hidden">
-				<div className="w-fit h-fit p-4 mt-4 rounded-lg  ">
-					<div className='md:ml-2 mt-4 '>
-						<p className='text-xs  italic'>Backend</p>
-						<div className="w-full grid grid-cols-5 md:flex gap-x-8 gap-4">
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Javascript" src="/skills/icons8-javascript.svg" />
-								</a>
+			<div className="px-4 lg:px-12">
+				<p className="text-xl py-4">Skills?</p>
+				<div className="grid md:grid-cols-2 gap-8">
+					<Card className="h-full  shadow-lg border border-primary/5 dark:border-primary/10">
+						<CardHeader>
+							<CardTitle>
+								Programming Language
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<div className="flex gap-4">
+								<Image alt="typescript" width={500} height={500} className="w-8 rounded" src="/icons/typescript-colored.svg" />
+								<Image alt="javascript" width={500} height={500} className="w-8 rounded" src="/icons/javascript-colored.svg" />
+								<Image alt="php" width={500} height={500} className="w-8 rounded dark:hidden block" src="/icons/php-logo-black.svg" />
+								<Image alt="php" width={500} height={500} className="w-8 rounded dark:block hidden" src="/icons/php-logo-white.svg" />
 							</div>
-							<div>
-								<a href="#">
-									<picture>
-										<source srcSet={"/skills/icons8-nodejs-white.svg"} media={`(prefers-color-scheme: dark)`} />
-										<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Node JS" src="/skills/icons8-nodejs.svg" />
-									</picture>
-
-								</a>
+						</CardContent>
+					</Card>
+					<Card className="h-full  shadow-lg border border-primary/5 dark:border-primary/10">
+						<CardHeader>
+							<CardTitle>
+								Databases
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<div className="flex gap-4">
+								<Image alt="mongodb" width={500} height={500} className="w-8 rounded" src="/icons/mongodb-colored.svg" />
+								<Image alt="couchdb" width={500} height={500} className="w-8 rounded" src="/icons/couch.webp" />
+								<Image alt="mysql" width={500} height={500} className="w-8 rounded" src="/icons/mysql-colored.svg" />
+								<Image alt="postgresql" width={500} height={500} className="w-8 rounded" src="/icons/postgresql-colored.svg" />
 							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="TypeScript" src="/skills/icons8-typescript.svg" />
-								</a>
+						</CardContent>
+					</Card>
+					<Card className="h-full  shadow-lg border border-primary/5 dark:border-primary/10">
+						<CardHeader>
+							<CardTitle>
+								Framework And Runtime
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<div className="flex gap-4">
+								<Image alt="nextjs" width={500} height={500} className="w-8 rounded dark:hidden block" src="/icons/nextjs-black.svg" />
+								<Image alt="nextjs" width={500} height={500} className="w-8 rounded dark:block hidden" src="/icons/nextjs-white.svg" />
+								<Image alt="expressjs" width={500} height={500} className="w-8 rounded dark:hidden block" src="/icons/express-black.svg" />
+								<Image alt="expressjs" width={500} height={500} className="w-8 rounded dark:block hidden" src="/icons/express-white.svg" />
+								<Image alt="nestjs" width={500} height={500} className="w-8 rounded " src="/icons/nestjs-colored.svg" />
+								<Image alt="nodejs" width={500} height={500} className="w-8 rounded " src="/icons/nodejs-colored.svg" />
+								<Image alt="bun" width={500} height={500} className="w-8 rounded " src="/icons/bun.svg" />
 							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="ExpressJS" src="/skills/icons8-express-js.svg" />
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="NestJS" src="/skills/icons8-nestjs.svg" />
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="MongoDB" src="/skills/icons8-mongodb.svg" />
-								</a>
-							</div>
-
-							<div>
-								<a href="#">
-									<picture>
-										<source srcSet={"/skills/icons8-php-white.svg"} media={`(prefers-color-scheme: dark)`} />
-										<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="PHP" src="/skills/icons8-php.svg" />
-									</picture>
-
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<picture>
-										<source srcSet={"/skills/icons8-mysql-white.svg"} media={`(prefers-color-scheme: dark)`} />
-										<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="MySql" src="/skills/icons8-mysql.svg" />
-									</picture>
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Redis" src="/skills/icons8-redis.svg" />
-								</a>
-							</div>
-						</div>
-					</div>
-					<div className='md:ml-2 mt-4'>
-						<p className='text-xs  italic'>Frontend</p>
-						<div className="w-full grid grid-cols-5 md:flex gap-x-8 gap-4">
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="reactJS" src="/skills/icons8-react.svg" />
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Svelte" src="/skills/icons8-svelte.svg" />
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="HTML5" src="/skills/icons8-html5.svg" />
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Javascript" src="/skills/icons8-javascript.svg" />
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<picture>
-										<source srcSet={"/skills/icons8-jquery-white.svg"} media={`(prefers-color-scheme: dark)`} />
-										<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="JQuery" src="/skills/icons8-jquery.svg" />
-									</picture>
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="SASS" src="/skills/icons8-sass.svg" />
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Tailwing" src="/skills/icons8-tailwind-css.svg" />
-								</a>
-							</div>
-							<div>
-								<a href="#">
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Bootstrap" src="/skills/icons8-bootstrap.svg" />
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div className="w-fit h-fit p-4 md:ml-4 mt-4 md:mt-0 rounded-lg  ">
-					<div className="w-full flex md:flex-col gap-4">
-						<div>
-							<a href="#">
-								<picture>
-									<source srcSet={"/skills/icons8-amazon-web-services-white.svg"} media={`(prefers-color-scheme: dark)`} />
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="AWS" src="/skills/icons8-amazon-web-services.svg" />
-								</picture>
-
-							</a>
-						</div>
-						<div>
-							<a href="#">
-								<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="NPM" src="/skills/icons8-npm.svg" />
-							</a>
-						</div>
-						<div>
-							<a href="#">
-								<picture>
-									<source srcSet={"/skills/icons8-github-white.svg"} media={`(prefers-color-scheme: dark)`} />
-									<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="GitHub" src="/skills/icons8-github.svg" />
-								</picture>
-							</a>
-						</div>
-						<div>
-							<a href="#">
-								<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Heroku" src="/skills/icons8-heroku.svg" />
-							</a>
-						</div>
-						<div>
-							<a href="#">
-								<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="JIRA" src="/skills/icons8-jira.svg" />
-							</a>
-						</div>
-						<div>
-							<picture>
-								<source srcSet={"/skills/icons8-notion-white.svg"} media={`(prefers-color-scheme: dark)`} />
-								<Image width={0} height={0} className='w-fit transition-all ease-in-out duration-300  dark:drop-shadow-[0_10px_7px_rgba(0,0,0,1)] drop-shadow-[0_10px_4px_rgba(51,65,85,0.50)]' alt="Notion" src="/skills/icons8-notion.svg" />
-							</picture>
-						</div>
-					</div>
+						</CardContent>
+					</Card>
+					<Card className="h-full  shadow-lg border border-primary/5 dark:border-primary/10">
+						<CardHeader>
+							<CardTitle>
+								Tools
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>evaluating...</p>
+						</CardContent>
+					</Card>
 				</div>
 			</div>
-		</main>
+		</ScrollArea>
 	);
 }
