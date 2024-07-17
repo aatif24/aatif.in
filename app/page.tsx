@@ -1,12 +1,11 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
 
 export default function Home() {
 	return (
-		<ScrollArea className="h-screen lg:px-12 lg:py-24 p-4 ">
+		<div className="lg:px-12 lg:py-24 p-4 pb-12">
 			<div className="px-4 lg:px-12">
 				<p className="text-xl py-4">What?</p>
 				<div className="grid md:grid-cols-2 gap-8">
@@ -95,6 +94,6 @@ export default function Home() {
 					</Card>
 				</div>
 			</div>
-		</ScrollArea>
+		</div>
 	);
 }

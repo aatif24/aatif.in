@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./providers/theme.provider";
 import { Header } from "./components/header";
 import Info from "./components/info";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,9 @@ export default function RootLayout({
           <main className="lg:grid lg:grid-cols-3 min-h-screen">
             <Info />
             <div className="col-span-2 dark:bg-primary-foreground ">
-              {children}
+              <ScrollArea className="lg:h-screen">
+                {children}
+              </ScrollArea>
             </div>
           </main>
         </ThemeProvider>
