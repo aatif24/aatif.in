@@ -24,9 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta property="og:image" content={"/photo2.jpg"} />
-      </Head>
       <body className={`${inter.className} h-screen  `}>
         <ThemeProvider
           attribute="class"
