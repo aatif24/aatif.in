@@ -17,8 +17,8 @@ import { useTheme } from 'next-themes';
 
 export default function Info() {
     const { setTheme } = useTheme()
-    return <div className="lg:col-span-1 bg-zinc-100 dark:bg-zinc-800 h-screen w-full relative">
-        <header className=' fixed lg:absolute bg-zinc-100/80 dark:bg-zinc-800/80 z-20 top-0 p-4 backdrop-blur-sm w-full'>
+    return <div className="lg:col-span-1 bg-zinc-100 dark:bg-zinc-800 min-h-screen h-screen md:h-fit lg:h-screen w-full relative">
+        <header className='fixed lg:absolute bg-zinc-100/80 dark:bg-zinc-800/80 z-20 top-0 p-4 backdrop-blur-sm w-full'>
             <div className="flex justify-between w-full">
                 <Image src={LogoWhite} height={400} width={400} className='dark:block hidden w-8' alt="aatif-shaikh" />
                 <Image src={Logoblack} height={400} width={400} className='dark:hidden block w-8' alt="aatif-shaikh" />
@@ -44,7 +44,7 @@ export default function Info() {
                 </DropdownMenu>
             </div>
         </header>
-        <div className="flex gap-8 flex-col items-center justify-center h-full">
+        <div className="flex gap-8 flex-col items-center justify-center h-full pt-20 pb-10">
             <Image
                 alt="Aatif Shaikh"
                 className='grayscale rounded-lg max-w-[15rem] md:max-w-[10rem]'
