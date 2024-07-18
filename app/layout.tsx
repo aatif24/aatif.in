@@ -1,17 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./providers/theme.provider";
-import { Header } from "./components/header";
 import Info from "./components/info";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  themeColor: 'bg-primary',
+}
+
 export const metadata: Metadata = {
   title: "Aatif Shaikh",
-  description: "Software Developer from Mumbai India, with rock-solid experience in building complex applications with cutting-edge technologies.",
-  themeColor: "bg-slate-900"
+  description: "Software Developer from Mumbai India, with rock-solid experience in building complex applications with cutting-edge technologies."
 };
 
 export default function RootLayout({
