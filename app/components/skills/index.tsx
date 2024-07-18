@@ -81,7 +81,7 @@ const Skeleton = ({ icons }: { icons: IIcons[] }) => {
         <div className="p-8 overflow-hidden h-full relative flex items-center justify-center">
             <div className="flex flex-row flex-shrink-0 justify-center items-center gap-2">
                 {icons.length ? icons.map((icon, i) => {
-                    return <Container className={icon?.containerClass}>
+                    return <Container key={i} className={icon?.containerClass}>
                         {
                             <span key={i}>
                                 <Image alt="Javascript" src={icon?.black} height={500} width={500} className={`rounded ${icon.imgClassDark}`} />
