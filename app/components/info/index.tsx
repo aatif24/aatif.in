@@ -13,6 +13,7 @@ import Links from '../links';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 
 
 export default function Info() {
@@ -20,8 +21,10 @@ export default function Info() {
     return <div className="lg:col-span-1 bg-zinc-100 dark:bg-zinc-800 min-h-screen h-screen md:h-fit lg:h-screen w-full relative">
         <header className='fixed lg:absolute bg-zinc-100/80 dark:bg-zinc-800/80 z-20 top-0 p-4 backdrop-blur-sm w-full'>
             <div className="flex justify-between w-full">
-                <Image src={LogoWhite} height={400} width={400} className='dark:block hidden w-8' alt="aatif-shaikh" />
-                <Image src={Logoblack} height={400} width={400} className='dark:hidden block w-8' alt="aatif-shaikh" />
+                <Link href={"/"}>
+                    <Image src={LogoWhite} height={400} width={400} className='dark:block hidden w-8' alt="aatif-shaikh" />
+                    <Image src={Logoblack} height={400} width={400} className='dark:hidden block w-8' alt="aatif-shaikh" />
+                </Link>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon" className="z-50 ml-2 ">
@@ -56,7 +59,7 @@ export default function Info() {
             <div className="text-center p-0 m-0 px-4">
                 <p className='text-4xl'>Aatif Shaikh</p>
                 <p>Software Developer from Mumbai, India.</p>
-                <p className='text-sm mt-6'>Rock-solid experience in building complex applications with cutting-edge technologies.</p>
+                <p className='text-sm  '>Crafting innovative and scalable solutions.</p>
             </div>
             <div className='grayscale'>
                 <Links />

@@ -29,9 +29,9 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          <main className="lg:grid lg:grid-cols-3 min-h-screen">
+          <main className="lg:grid lg:grid-cols-4 min-h-screen">
             <Info />
-            <div className="col-span-2 dark:bg-primary-foreground ">
+            <div className="col-span-3 dark:bg-primary-foreground ">
               <ScrollArea className="lg:h-screen">
                 {children}
               </ScrollArea>
