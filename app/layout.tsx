@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./providers/theme.provider";
 import Info from "./components/info";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta property="og:image" content={"/photo2.jpg"} />
+      </Head>
       <body className={`${inter.className} h-screen  `}>
         <ThemeProvider
           attribute="class"
