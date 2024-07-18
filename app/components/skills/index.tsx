@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { GoCopilot } from "react-icons/go";
 import { Card, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IIcons {
     [key: string]: string
@@ -83,10 +84,10 @@ const Skeleton = ({ icons }: { icons: IIcons[] }) => {
                 {icons.length ? icons.map((icon, i) => {
                     return <Container key={i} className={icon?.containerClass}>
                         {
-                            <span key={i}>
+                            <Link href={icon?.link} target="_blank" key={i}>
                                 <Image alt="Javascript" src={icon?.black} height={500} width={500} className={`rounded ${icon.imgClassDark}`} />
                                 <Image alt="Javascript" src={icon?.white} height={500} width={500} className={`rounded ${icon.imgClass}`} />
-                            </span>
+                            </Link>
                         }
                     </Container>
                 }) : null}

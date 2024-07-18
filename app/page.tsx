@@ -38,7 +38,7 @@ export default function About() {
             <p className="text-xl mt-8 text-center sm:text-left">Skills?</p>
             <Separator />
             <div className="grid md:grid-cols-2 gap-4 my-4">
-                <Skills title="Programming Languages" description="" icons={programmingLanguages} />
+                <Skills title="Languages & DB" description="" icons={programmingLanguages} />
                 <Skills title="Framework & Runtime" description="" icons={frameworks} />
             </div>
         </section>

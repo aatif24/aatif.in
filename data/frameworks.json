@@ -2,36 +2,41 @@
     {
         "black": "/icons/express-black.svg",
         "white": "/icons/express-white.svg",
-        "imgClass": "h-6 dark:w-6 dark:block w-0 hidden",
-        "imgClassDark": "h-6 w-6 dark:w-0 dark:hidden",
-        "containerClass": "h-8 w-8 circle-1"
+        "imgClass": "hidden dark:block w-6",
+        "imgClassDark": "dark:hidden block w-6",
+        "containerClass": "h-10 w-10 circle-1",
+        "link":"https://expressjs.com"
     },
     {
         "black": "/icons/nestjs-colored.svg",
         "white": "/icons/nestjs-colored.svg",
-        "imgClass": "h-7 dark:w-7 dark:block w-0 hidden",
-        "imgClassDark": "h-7 w-7 dark:w-0 dark:hidden",
-        "containerClass": "h-12 w-12 circle-2"
+        "imgClass": "h-7 w-7",
+        "imgClassDark": "hidden",
+        "containerClass": "h-12 w-12 circle-2",
+        "link":"https://nestjs.com"
     },
     {
         "black": "/icons/nodejs-colored.svg",
         "white": "/icons/nodejs-colored.svg",
-        "imgClass": "h-8 dark:w-8 dark:block w-0 hidden",
-        "imgClassDark": "h-8 w-8 dark:w-0 dark:hidden",
-        "containerClass": "circle-3"
+        "imgClass": "h-9 w-9",
+        "imgClassDark": "hidden",
+        "containerClass": "circle-3",
+        "link":"https://nodejs.org/en"
     },
     {
         "black": "/icons/bun.svg",
         "white": "/icons/bun.svg",
-        "imgClass": "h-7 dark:w-7 dark:block w-0 hidden",
-        "imgClassDark": "h-7 w-7 dark:w-0 dark:hidden",
-        "containerClass": "h-12 w-12 circle-4"
+        "imgClass": "h-7 w-7",
+        "imgClassDark": "hidden",
+        "containerClass": "h-12 w-12 circle-4",
+        "link":"https://bun.sh"
     },
     {
         "black": "/icons/nextjs-black.svg",
         "white": "/icons/nextjs-white.svg",
-        "imgClass": "h-6 dark:w-6 dark:block w-0 hidden",
-        "imgClassDark": "h-6 w-6 dark:w-0 dark:hidden",
-        "containerClass": "h-8 w-8 circle-5"
+        "imgClass": "hidden dark:block w-6",
+        "imgClassDark": "dark:hidden block w-6",
+        "containerClass": "h-10 w-10 circle-5",
+        "link":"https://nextjs.org"
     }
 ]
