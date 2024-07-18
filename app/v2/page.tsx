@@ -1,7 +1,7 @@
 import { Separator } from "@/components/ui/separator";
-import { Experience } from "./components/experience";
+import { Experience } from "../components/experience";
 import Link from "next/link";
-import { Skills } from "./components/skills";
+import { Skills } from "../components/skills";
 import programmingLanguages from "@/data/languages.json"
 import frameworks from "@/data/frameworks.json"
 export default function About() {
