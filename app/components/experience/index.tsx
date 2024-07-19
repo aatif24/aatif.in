@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { cn } from "@/lib/utils";
 
 export function Experience() {
     const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -119,18 +119,23 @@ export function Experience() {
                     </div>
                 ) : null}
             </AnimatePresence>
-            <ul className="flex flex-col lg:w-3/4 items-start gap-6 text-center sm:text-left">
+
+            <ul className="flex flex-col lg:w-3/4 items-start gap-6 text-center sm:text-left relative">
                 {cards.map((card, index) => (
-                    <motion.div
+                    <motion.li
                         layoutId={`card-${card.title}-${id}`}
                         key={card.title}
                         onClick={() => setActive(card)}
-                        className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+                        className="p-4 flex flex-col  justify-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
                     >
-                        <div className="sm:grid grid-cols-3 gap-4  w-full">
+                        <div className={cn("absolute w-3 h-3 bg-cyan-500 rounded-full mt-1.5 blur-sm -start-1.5 dark:bg-cyan-700", (index == 0 ? "animate-pulse" : ""))}></div>
+                        <div className="sm:grid grid-cols-3 gap-4 h-full  w-full">
+                            <motion.div className="h-5/6 w-px absolute sm:top-10 bottom-0  left-0 z-40 bg-gradient-to-t from-cyan-500/50  via-cyan-500/30 to-transparent ">
+
+                            </motion.div>
                             <motion.p
                                 layoutId={`title-1-${card.title}-${id}`}
-                                className="hidden sm:inline-block font-medium text-neutral-800 dark:text-neutral-200  md:text-left text-base"
+                                className="hidden sm:flex items-center font-medium text-neutral-800 dark:text-neutral-200  md:text-left text-base"
                             >
                                 {card.description}
                             </motion.p>
@@ -155,9 +160,9 @@ export function Experience() {
                                 </motion.h5>
                             </div>
                         </div>
-                    </motion.div>
+                    </motion.li>
                 ))}
-            </ul>
+            </ul >
         </>
     );
 }
@@ -223,7 +228,7 @@ const cards = [
         description: "Aug 2019 - Nov 2020",
         title: "Bombayworks",
         longDescription: "Senior Full-Stack Developer, leading projects and ensuring seamless full-stack solutions.",
-        ctaText: "Cehckout BW",
+        ctaText: "Checkout BW",
         ctaLink: "https://bombayworks.com",
         content: () => {
             return (
@@ -255,11 +260,10 @@ const cards = [
         title: "Healthdekho (Previously TGBTT)",
         longDescription: "Senior Software Developer & Lead, driving tech stack migrations and performance improvements.",
         ctaText: "Healthdekho",
-        ctaLink: "https://ui.aceternity.com/templates",
+        ctaLink: "https://healthdekho.com",
         content: () => {
             return (
                 <ul className="space-y-4">
-
                     <li>As part of the core tech team in the transition of TGBTT to Healthdekho, I contributed significantly
                         to the end-to-end product lifecycle and decision-making processes.
                     </li>
@@ -275,7 +279,7 @@ const cards = [
         description: "May 2014 – Dec 2015",
         title: "Codebox",
         longDescription: "Associate Engineer, diving into development and honing problem-solving skills.",
-        ctaText: "Visit",
+        ctaText: "Know more",
         ctaLink: "https://www.codebox.in",
         content: () => {
             return (

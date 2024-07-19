@@ -21,6 +21,7 @@ const config = {
     'h-10',
     'w-12',
     'h-12',
+    'animate-pulse',
     'dark:w-0',
     'dark:block',
     'dark:hidden',

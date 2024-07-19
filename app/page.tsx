@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Skills } from "./components/skills";
 import programmingLanguages from "@/data/languages.json"
 import frameworks from "@/data/frameworks.json"
+
 export default function About() {
     return <div className="lg:px-12 lg:py-24 p-4 pb-12 relative w-full ">
         <section className="p-8">
             <p className="text-xl text-center sm:text-left ">About?</p>
             <Separator />
-            <div className="space-y-4 text-lg  sm:text-xl my-4 text-center sm:text-left">
+            <div className="space-y-4  sm:text-lg my-4 text-center sm:text-left text-primary/80">
                 <p className="">
                     <span className="font-semibold text-2xl">Back in 2014</span>, I embarked on my journey into the world of software development,
                     diving into the intricacies of coding with enthusiasm and curiosity.

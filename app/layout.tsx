@@ -36,7 +36,7 @@ export default function RootLayout({
               <ScrollArea className="lg:h-screen">
                 {children}
                 <footer className="text-center font-thin my-4">
-                  Developed in <Link className=" font-normal underline text-blue-800" href="https://code.visualstudio.com" target="_blank">Visual Studio Code</Link> by yours truly. Built with <Link className=" font-normal underline text-blue-800" href="https://nextjs.org" target="_blank">Next.js</Link> and <Link className=" font-normal underline text-blue-800" href="https://tailwindcss.com" target="_blank">Tailwind CSS</Link>, deployed with <Link className=" font-normal underline text-blue-800" href="https://vercel.com" target="_blank">Vercel</Link>.
+                  Developed in <Link className=" font-normal underline text-blue-500" href="https://code.visualstudio.com" target="_blank">Visual Studio Code</Link> by yours truly. Built with <Link className=" font-normal underline text-blue-500" href="https://nextjs.org" target="_blank">Next.js</Link> and <Link className=" font-normal underline text-blue-500" href="https://tailwindcss.com" target="_blank">Tailwind CSS</Link>, deployed with <Link className=" font-normal underline text-blue-500" href="https://vercel.com" target="_blank">Vercel</Link>.
                 </footer>
               </ScrollArea>
             </div>
