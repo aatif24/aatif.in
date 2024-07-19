@@ -128,9 +128,9 @@ export function Experience() {
                         onClick={() => setActive(card)}
                         className="p-4 flex flex-col  justify-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
                     >
-                        <div className={cn("absolute w-3 h-3 bg-cyan-500 rounded-full mt-1.5 blur-sm -start-1.5 dark:bg-cyan-700", (index == 0 ? "animate-pulse" : ""))}></div>
+                        <div className={cn("absolute w-3 h-3 bg-neutral-500 rounded-full mt-1.5 blur-sm -start-1.5 dark:bg-neutral-700", (index == 0 ? "animate-pulse" : ""))}></div>
                         <div className="sm:grid grid-cols-3 gap-4 h-full  w-full">
-                            <motion.div className="h-5/6 w-px absolute sm:top-10 bottom-0  left-0 z-40 bg-gradient-to-t from-cyan-500/50  via-cyan-500/30 to-transparent ">
+                            <motion.div className="h-5/6 w-px absolute sm:top-10 bottom-0  left-0 z-40 bg-gradient-to-t from-neutral-500/50  via-neutral-500/30 to-transparent ">
 
                             </motion.div>
                             <motion.p
