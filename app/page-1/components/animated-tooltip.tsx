@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, {useState} from "react";
+import React, {MouseEventHandler, useState} from "react";
 import {
     motion,
     useTransform,
@@ -32,14 +32,15 @@ export const AnimatedTooltip = ({
         useTransform(x, [-100, 100], [-50, 50]),
         springConfig
     );
-    const handleMouseMove = (event: any) => {
-        const halfWidth = event.target.offsetWidth / 2;
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+    const handleMouseMove: MouseEventHandler<HTMLImageElement> | undefined = (event: any) => {
+        const halfWidth = event.target.halfWidth / 2;
         x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
     };
 
     return (
         <>
-            {items.map((item, idx) => (
+            {items.map((item) => (
                 <div
                     className="cursor-help relative group"
                     key={item.name}
@@ -72,12 +73,12 @@ export const AnimatedTooltip = ({
 
                                 <div className="relative font-bold text-white z-30 text-base">
                                     {item.name}
-                                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-full ">
-                                    <div
-                                        className="absolute left-[45%] -translate-x-1/2 z-30 w-[60%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px "/>
-                                    <div
-                                        className="absolute  left-[50%] -translate-x-1/2 w-[80%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px "/>
-                                </div>
+                                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-full ">
+                                        <div
+                                            className="absolute left-[45%] -translate-x-1/2 z-30 w-[60%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px "/>
+                                        <div
+                                            className="absolute  left-[50%] -translate-x-1/2 w-[80%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px "/>
+                                    </div>
                                 </div>
                                 <div className="text-white text-xs">{item?.designation}</div>
                             </motion.div>

@@ -75,7 +75,6 @@ export default function Home() {
 
                     <Button
                         duration={5000}
-                        type="a"
                         className=" w-full"
                         borderClassName="w-12 h-12"
                         borderRadius="0.7rem"

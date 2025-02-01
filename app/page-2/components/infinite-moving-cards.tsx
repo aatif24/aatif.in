@@ -25,6 +25,7 @@ export const InfiniteMovingCards = ({
 
     useEffect(() => {
         addAnimation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const [start, setStart] = useState(false);
 
@@ -87,7 +88,7 @@ export const InfiniteMovingCards = ({
                     pauseOnHover && "hover:[animation-play-state:paused]"
                 )}
             >
-                {items.map((item, idx) => (
+                {items.map((item) => (
                     <li
                         className="flex  justify-end items-end relative rounded-2xl   px-8 "
                         key={item.name}
