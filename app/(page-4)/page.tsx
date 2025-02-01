@@ -44,16 +44,19 @@ export default function Page3() {
                                 high-performance applications.</p>
                         </div>
                     </div>
-                    <div className="absolute h-10 xl:w-1/3 w-1/2 xl:bottom-14 bottom-6 right-0 xl:right-0 xl:transform  bg-background">
+                    <div
+                        className="absolute h-10 xl:w-1/3 w-1/2 xl:bottom-14 bottom-6 right-0 xl:right-0 xl:transform  bg-background">
                         <div className="absolute left-2  top-1/2 -translate-y-1/2">
                             <div className="flex gap-1">
-                                <Image
-                                    src="/linkedin.svg"
-                                    alt="LinkedIn"
-                                    height={0}
-                                    width={100}
-                                    className="w-9 h-9 grayscale"
-                                />
+                                <a href={"https://www.linkedin.com/in/aatif24/"} target={"_blank"}>
+                                    <Image
+                                        src="/linkedin.svg"
+                                        alt="LinkedIn"
+                                        height={0}
+                                        width={100}
+                                        className="w-9 h-9 grayscale"
+                                    />
+                                </a>
                                 <Calendar/>
                             </div>
                         </div>
