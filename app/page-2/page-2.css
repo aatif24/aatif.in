@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+    :root {
+        --background: 100 3% 31%;
+        --foreground: 0 0% 80%;
+        --radius: 0.9rem;
+        --accent: 10 100% 59%;
+        /*--accent: 24 100% 59%;*/
+        --accent-foreground: 68 83% 65%;
+        --secondary: 10 0% 50%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+        font-family: "Orbitron", serif;
+        font-optical-sizing: auto;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}

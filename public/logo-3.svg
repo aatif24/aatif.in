@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+        "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+     width="254.000000pt" height="278.000000pt" viewBox="0 0 254.000000 278.000000"
+     preserveAspectRatio="xMidYMid meet">
+    <metadata>
+        Created by aatif
+    </metadata>
+    <g transform="translate(0.000000,278.000000) scale(0.100000,-0.100000)"
+       fill="#101419" stroke="none">
+        <path d="M210 2355 l0 -235 801 10 c532 0 807 -3 820 -10 18 -10 19 -23 19
+-170 l0 -160 -820 0 -820 0 0 -434 c0 -403 1 -438 20 -497 49 -161 187 -290
+355 -334 51 -13 178 -15 902 -15 l844 0 -3 848 -3 847 -24 63 c-28 75 -92 165
+-153 215 -56 46 -157 94 -227 107 -34 6 -361 10 -882 10 l-829 0 0 -235z
+m1640 -1190 l0 -195 -569 0 c-504 0 -571 2 -585 16 -13 13 -16 45 -16 195 l0
+179 585 0 585 0 0 -195z"/>
+        <defs>
+            <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
+                <stop offset="0%" stop-color="#ff8d2900" />
+                <stop offset="100%" stop-color="#ff8d29" />
+            </linearGradient>
+        </defs>
+        <rect width="840%" height="100%" stroke="none" rx="0" ry="0" transform="translate(200 113.564669)" fill="url(#grad1)">
+        </rect>
+    </g>
+</svg>
