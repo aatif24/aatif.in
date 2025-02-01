@@ -48,7 +48,7 @@ export default function Page3() {
                         <div className="absolute left-2  top-1/2 -translate-y-1/2">
                             <div className="flex gap-1">
                                 <Image
-                                    src="https://aatif.in/brands/icons8-linkedin.svg"
+                                    src="/linkedin.svg"
                                     alt="LinkedIn"
                                     height={0}
                                     width={100}

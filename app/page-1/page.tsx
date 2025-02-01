@@ -86,7 +86,7 @@ export default function Home() {
                             className="flex gap-2 items-center ps-1 pe-2"
                         >
                             <Image
-                                src="https://aatif.in/brands/icons8-linkedin.svg"
+                                src="/linkedin.svg"
                                 alt="LinkedIn"
                                 height={0}
                                 width={100}
