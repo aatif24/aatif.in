@@ -14,7 +14,7 @@ export default function RootLayout({
             <Script src="https://uptime.betterstack.com/widgets/announcement.js" data-id="166520" async={true}
                     type="text/javascript" strategy="lazyOnload"/>
             {children}
-            <a target="_blank" className="absolute bottom-0" href="https://uptime.betterstack.com">
+            <a target="_blank" className="absolute bottom-0 hidden lg:block" href="https://uptime.betterstack.com">
                 <picture>
                     <source srcSet={"https://uptime.betterstack.com/assets/static_assets/badges/light.png"}
                             media="(prefers-color-scheme: light)"/>
