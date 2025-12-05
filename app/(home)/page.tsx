@@ -28,6 +28,10 @@ const Portfolio = () => {
       });
       if (current) setActiveSection(current);
     };
+
+    // Initial check
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -39,7 +43,7 @@ const Portfolio = () => {
       period: "Dec 2021 – Present",
       description: "Leading backend engineering for cloud-native systems powering 1500+ aircraft.",
       tags: ["AWS Serverless", "GenAI", "Node.js", "System Design"],
-      color: "bg-blue-50 text-blue-700 border-blue-100",
+      color: "bg-cyan-50 text-cyan-700 border-cyan-100",
       icon: <Rocket className="w-5 h-5" />
     },
     {
@@ -86,7 +90,7 @@ const Portfolio = () => {
 Super solid technically, whether it's frontend or backend, he just gets things done.
 But honestly, what I'll remember most is how easy and fun it was to work with him. Always positive, always helpful, and the kind of person who makes the team better just by being there. Great developer, even better human.
 Any team would be lucky to have him.`,
-      color: "bg-blue-50 border-blue-100"
+      color: "bg-cyan-50 border-cyan-100"
     },
     {
       name: "Tanveer Bhanot",
@@ -111,23 +115,27 @@ I would strongly recommend him to lead and contribute to any project involving m
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-cyan-100 selection:text-cyan-900">
 
       {/* Navigation */}
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full px-6 py-3 shadow-sm">
-        <div className="flex gap-6 text-sm font-medium text-slate-500">
+      <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full px-4 md:px-6 py-2 md:py-3 shadow-sm max-w-[calc(100vw-2rem)]" aria-label="Main navigation">
+        <div className="flex gap-3 md:gap-6 text-xs md:text-sm font-medium text-slate-500 overflow-x-auto scrollbar-hide">
           {['Home', 'About', 'Experience', 'Skills'].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
-              className={`hover:text-slate-900 transition-colors ${activeSection === item.toLowerCase() ? 'text-slate-900 font-bold' : ''}`}
+              className={`hover:text-slate-900 transition-colors whitespace-nowrap px-2 py-1 ${activeSection === item.toLowerCase() ? 'text-slate-900 font-bold' : ''}`}
+              aria-label={`Navigate to ${item} section`}
+              aria-current={activeSection === item.toLowerCase() ? 'page' : undefined}
             >
               {item}
             </button>
           ))}
           <button
             onClick={() => scrollToSection('recommendations')}
-            className={`hover:text-slate-900 transition-colors ${activeSection === 'recommendations' ? 'text-slate-900 font-bold' : ''}`}
+            className={`hover:text-slate-900 transition-colors whitespace-nowrap px-2 py-1 ${activeSection === 'recommendations' ? 'text-slate-900 font-bold' : ''}`}
+            aria-label="Navigate to Recommendations section"
+            aria-current={activeSection === 'recommendations' ? 'page' : undefined}
           >
             Recs
           </button>
@@ -135,10 +143,10 @@ I would strongly recommend him to lead and contribute to any project involving m
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen snap-start flex flex-col justify-center items-center relative overflow-hidden px-6 pt-20">
+      <section id="home" className="min-h-screen snap-start flex flex-col justify-center items-center relative overflow-hidden px-4 md:px-6 pt-24 md:pt-20" aria-label="Hero section">
         {/* Background Blobs */}
-        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl -z-10 opacity-60" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-100/50 rounded-full blur-3xl -z-10 opacity-60" />
+        <div className="absolute top-[-20%] right-[-10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-cyan-100/50 rounded-full blur-3xl -z-10 opacity-60" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-indigo-100/50 rounded-full blur-3xl -z-10 opacity-60" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -151,24 +159,26 @@ I would strongly recommend him to lead and contribute to any project involving m
             Ready to Relocate
           </div>
 
-          <h1 className="text-7xl md:text-9xl font-heading font-bold tracking-tight text-slate-900 leading-[0.9]">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-heading font-bold tracking-tight text-slate-900 leading-[0.9]">
             Aatif <span className="text-slate-400">Shaikh</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
-            Lead Engineer & Fullstack Specialist building <span className="font-medium text-slate-900 bg-blue-50 px-1 rounded">scalable cloud systems</span> and <span className="font-medium text-slate-900 bg-indigo-50 px-1 rounded">GenAI solutions</span>.
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed px-4">
+            Lead Engineer & Fullstack Specialist building <span className="font-medium text-slate-900 bg-cyan-50 px-1 rounded">scalable cloud systems</span> and <span className="font-medium text-slate-900 bg-indigo-50 px-1 rounded">GenAI solutions</span>.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pt-8 w-full max-w-md">
             <a href="https://www.linkedin.com/in/aatif24/" target="_blank" rel="noopener noreferrer"
-              className="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center gap-2 shadow-lg shadow-slate-200 hover:shadow-xl hover:-translate-y-1">
+              className="px-6 md:px-8 py-3 md:py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-lg shadow-slate-200 hover:shadow-xl hover:-translate-y-1"
+              aria-label="Connect with Aatif on LinkedIn">
               <Linkedin className="w-5 h-5" />
-              Connect on LinkedIn
+              <span className="text-sm md:text-base">Connect on LinkedIn</span>
             </a>
             <a href="https://github.com/aatif24" target="_blank" rel="noopener noreferrer"
-              className="px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:border-slate-400 transition-all flex items-center gap-2 hover:bg-slate-50">
+              className="px-6 md:px-8 py-3 md:py-4 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:border-slate-400 transition-all flex items-center justify-center gap-2 hover:bg-slate-50"
+              aria-label="View Aatif's GitHub profile">
               <Github className="w-5 h-5" />
-              GitHub
+              <span className="text-sm md:text-base">GitHub</span>
             </a>
           </div>
         </motion.div>
@@ -184,10 +194,10 @@ I would strongly recommend him to lead and contribute to any project involving m
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100 snap-start flex items-center">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-16 md:py-20 bg-slate-50 border-y border-slate-100 snap-start flex items-center" aria-label="Statistics">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {[
-            { label: "Global Users", value: "100K+", icon: <Globe className="w-6 h-6 text-blue-500" /> },
+            { label: "Global Users", value: "100K+", icon: <Globe className="w-6 h-6 text-cyan-500" /> },
             { label: "Uptime", value: "99.9%", icon: <Zap className="w-6 h-6 text-amber-500" /> },
             { label: "Experience", value: "11+ Yrs", icon: <Brain className="w-6 h-6 text-indigo-500" /> },
             { label: "Records Migrated", value: "50M+", icon: <Database className="w-6 h-6 text-emerald-500" /> },
@@ -211,19 +221,19 @@ I would strongly recommend him to lead and contribute to any project involving m
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section id="about" className="py-20 md:py-32 px-4 md:px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center" aria-label="About section">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-slate-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-slate-900">
               Engineering with <br />
-              <span className="text-blue-600">Precision & Passion</span>
+              <span className="text-cyan-600">Precision & Passion</span>
             </h2>
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <div className="space-y-6 text-base md:text-lg text-slate-600 leading-relaxed">
               <p>
                 I&apos;m a Lead Engineer specializing in building robust, scalable systems. With over a decade of experience, I&apos;ve transitioned from building simple websites to architecting complex cloud-native distributed systems.
               </p>
@@ -231,7 +241,7 @@ I would strongly recommend him to lead and contribute to any project involving m
                 Currently at <span className="font-bold text-slate-900">AirFi</span>, I drive technical strategy and lead teams to deliver high-impact solutions. I love solving hard problems—whether it&apos;s optimizing API latency, reducing cloud costs, or integrating cutting-edge GenAI features.
               </p>
             </div>
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-wrap gap-6 md:gap-4 pt-4">
               <div className="flex flex-col gap-1">
                 <span className="text-3xl font-bold text-slate-900">40%</span>
                 <span className="text-sm text-slate-500 font-medium">Perf Boost</span>
@@ -255,8 +265,8 @@ I would strongly recommend him to lead and contribute to any project involving m
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-3xl transform rotate-3 -z-10" />
-            <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl">
+            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-100 to-indigo-100 rounded-3xl transform rotate-3 -z-10" />
+            <div className="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-xl">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
@@ -292,10 +302,10 @@ I would strongly recommend him to lead and contribute to any project involving m
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-32 bg-slate-50 px-6 min-h-screen snap-start flex items-center">
+      <section id="experience" className="py-20 md:py-32 bg-slate-50 px-4 md:px-6 min-h-screen snap-start flex items-center" aria-label="Experience section">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold font-heading text-slate-900 mb-4">Professional Journey</h2>
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-slate-900 mb-4">Professional Journey</h2>
             <p className="text-slate-500">A timeline of technical leadership and impact.</p>
           </div>
 
@@ -336,48 +346,50 @@ I would strongly recommend him to lead and contribute to any project involving m
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-32 px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold font-heading text-slate-900 mb-4">Technical Arsenal</h2>
-          <p className="text-slate-500">Tools and technologies I use to build world-class software.</p>
-        </div>
+      <section id="skills" className="py-20 md:py-32 px-4 md:px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center" aria-label="Skills section">
+        <div className="w-full">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-slate-900 mb-4">Technical Arsenal</h2>
+            <p className="text-slate-500">Tools and technologies I use to build world-class software.</p>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {Object.entries(skills).map(([category, items], i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-3xl bg-slate-50 border border-slate-100"
-            >
-              <h3 className="text-xl font-bold text-slate-900 mb-6">{category}</h3>
-              <div className="flex flex-wrap gap-3">
-                {items.map((skill, j) => (
-                  <span key={j} className="px-4 py-2 bg-white text-slate-700 font-medium rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 hover:text-blue-600 transition-colors cursor-default">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {Object.entries(skills).map(([category, items], i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="p-6 md:p-8 rounded-3xl bg-slate-50 border border-slate-100"
+              >
+                <h3 className="text-xl font-bold text-slate-900 mb-6">{category}</h3>
+                <div className="flex flex-wrap gap-3">
+                  {items.map((skill, j) => (
+                    <span key={j} className="px-3 md:px-4 py-2 bg-white text-slate-700 font-medium rounded-xl shadow-sm border border-slate-100 hover:border-cyan-200 hover:text-cyan-600 transition-colors cursor-default text-sm md:text-base">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Recommendations */}
-      <section id="recommendations" className="py-32 bg-slate-900 text-white px-6 rounded-t-[3rem] mt-20 min-h-screen snap-start flex items-center">
+      <section id="recommendations" className="py-20 md:py-32 bg-slate-900 text-white px-4 md:px-6 rounded-t-[3rem] mt-20 min-h-screen snap-start flex items-center" aria-label="Recommendations section">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <h2 className="text-4xl font-bold font-heading mb-4">Kind Words</h2>
-              <p className="text-slate-400">Endorsements from colleagues and leaders.</p>
+              <h2 className="text-3xl sm:text-4xl font-bold font-heading mb-4">Kind Words</h2>
+              <p className="text-slate-400 text-sm md:text-base">Endorsements from colleagues and leaders.</p>
             </div>
-            <a href="https://www.linkedin.com/in/aatif24/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 flex items-center gap-2 font-medium">
+            <a href="https://www.linkedin.com/in/aatif24/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 font-medium text-sm md:text-base" aria-label="View all recommendations on LinkedIn">
               View all on LinkedIn <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {recommendations.map((rec, i) => (
               <motion.div
                 key={i}
@@ -385,13 +397,13 @@ I would strongly recommend him to lead and contribute to any project involving m
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors"
+                className="bg-slate-800/50 p-6 md:p-8 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors flex flex-col"
               >
                 <div className="mb-6">
                   <div className="font-bold text-lg">{rec.name}</div>
                   <div className="text-slate-400 text-sm">{rec.title}</div>
                 </div>
-                <p className="text-slate-300 leading-relaxed italic">&quot;{rec.text}&quot;</p>
+                <p className="text-slate-300 leading-relaxed italic text-sm md:text-base whitespace-pre-line">&quot;{rec.text}&quot;</p>
               </motion.div>
             ))}
           </div>
