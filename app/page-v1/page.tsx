@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Calendar from "@/app/(page-4)/components/calendar";
+import Calendar from "@/app/(home)/components/calendar";
 
 export default function Page3() {
     return <div className={"h-screen overflow-hidden relative flex items-center justify-center bg-background-3"}>

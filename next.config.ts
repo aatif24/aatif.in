@@ -1,4 +1,4 @@
-import type {NextConfig} from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     /* config options here */
@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
             {
                 protocol: 'https',
                 hostname: 'uptime.betterstack.com',
+                port: '',
+                pathname: '**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
                 port: '',
                 pathname: '**',
             },
