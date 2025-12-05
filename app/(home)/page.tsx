@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Github, Mail, MapPin, Phone, ArrowUpRight, Code2, Database, Rocket, Globe, Zap, Brain, ChevronDown, Server } from 'lucide-react';
+import Image from 'next/image';
+import { Linkedin, Github, Mail, MapPin, Phone, ArrowUpRight, Code2, Rocket, ChevronDown, Server, Plane, Heart, Building2, ShoppingCart, Users, TrendingUp, Award, HardDrive, Activity } from 'lucide-react';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -44,6 +45,7 @@ const Portfolio = () => {
       description: "Leading backend engineering for cloud-native systems powering 1500+ aircraft.",
       tags: ["AWS Serverless", "GenAI", "Node.js", "System Design"],
       color: "bg-cyan-50 text-cyan-700 border-cyan-100",
+      logo: "https://logo.clearbit.com/airfi.aero",
       icon: <Rocket className="w-5 h-5" />
     },
     {
@@ -53,6 +55,7 @@ const Portfolio = () => {
       description: "Directed fullstack development across enterprise projects, improving incident response by 50%.",
       tags: ["React", "Node.js", "MySQL", "Monitoring"],
       color: "bg-indigo-50 text-indigo-700 border-indigo-100",
+      logo: "https://logo.clearbit.com/bombayworks.com",
       icon: <Code2 className="w-5 h-5" />
     },
     {
@@ -62,7 +65,8 @@ const Portfolio = () => {
       description: "Managed engineering team, rebuilt legacy platform, and migrated to microservices.",
       tags: ["Microservices", "Team Leadership", "Migration"],
       color: "bg-emerald-50 text-emerald-700 border-emerald-100",
-      icon: <Database className="w-5 h-5" />
+      logo: "https://logo.clearbit.com/healthdekho.com",
+      icon: <Activity className="w-5 h-5" />
     },
     {
       company: "Codebox",
@@ -71,6 +75,7 @@ const Portfolio = () => {
       description: "Delivered multiple fullstack applications and optimized performance.",
       tags: ["PHP", "JavaScript", "Fullstack"],
       color: "bg-slate-50 text-slate-700 border-slate-100",
+      logo: "https://logo.clearbit.com/codebox.in", // No public website
       icon: <Server className="w-5 h-5" />
     }
   ];
@@ -79,25 +84,25 @@ const Portfolio = () => {
     {
       name: "Aviation",
       description: "In-flight connectivity and entertainment systems serving 1500+ aircraft globally",
-      icon: <Rocket className="w-6 h-6" />,
+      icon: <Plane className="w-6 h-6" />,
       color: "bg-cyan-50 text-cyan-700 border-cyan-200"
     },
     {
       name: "Healthcare",
       description: "Digital health platforms connecting patients with healthcare providers",
-      icon: <Brain className="w-6 h-6" />,
+      icon: <Heart className="w-6 h-6" />,
       color: "bg-indigo-50 text-indigo-700 border-indigo-200"
     },
     {
       name: "Enterprise",
       description: "Enterprise software solutions for monitoring, analytics, and operational efficiency",
-      icon: <Database className="w-6 h-6" />,
+      icon: <Building2 className="w-6 h-6" />,
       color: "bg-emerald-50 text-emerald-700 border-emerald-200"
     },
     {
       name: "E-commerce",
       description: "Scalable platforms for online retail and digital commerce",
-      icon: <Globe className="w-6 h-6" />,
+      icon: <ShoppingCart className="w-6 h-6" />,
       color: "bg-amber-50 text-amber-700 border-amber-200"
     }
   ];
@@ -224,10 +229,10 @@ I would strongly recommend him to lead and contribute to any project involving m
       <section className="py-16 md:py-20 bg-slate-50 border-y border-slate-100 snap-start flex items-center" aria-label="Statistics">
         <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {[
-            { label: "Global Users", value: "100K+", icon: <Globe className="w-6 h-6 text-cyan-500" /> },
-            { label: "Uptime", value: "99.9%", icon: <Zap className="w-6 h-6 text-amber-500" /> },
-            { label: "Experience", value: "11+ Yrs", icon: <Brain className="w-6 h-6 text-indigo-500" /> },
-            { label: "Records Migrated", value: "50M+", icon: <Database className="w-6 h-6 text-emerald-500" /> },
+            { label: "Global Users", value: "100K+", icon: <Users className="w-6 h-6 text-cyan-500" /> },
+            { label: "Uptime", value: "99.9%", icon: <TrendingUp className="w-6 h-6 text-amber-500" /> },
+            { label: "Experience", value: "11+ Yrs", icon: <Award className="w-6 h-6 text-indigo-500" /> },
+            { label: "Records Migrated", value: "50M+", icon: <HardDrive className="w-6 h-6 text-emerald-500" /> },
           ].map((stat, i) => (
             <motion.div
               key={i}
@@ -376,8 +381,21 @@ I would strongly recommend him to lead and contribute to any project involving m
                 className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
               >
                 <div className="flex flex-col md:flex-row gap-6 md:items-start">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${exp.color.split(' ')[0]} ${exp.color.split(' ')[1]}`}>
-                    {exp.icon}
+                  <div className="w-16 h-16 rounded-xl flex items-center justify-center shrink-0 bg-white border-2 border-slate-100 p-2 overflow-hidden">
+                    {exp.logo ? (
+                      <Image
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-contain"
+                        unoptimized
+                      />
+                    ) : (
+                      <div className={`w-full h-full rounded-lg flex items-center justify-center ${exp.color.split(' ')[0]} ${exp.color.split(' ')[1]}`}>
+                        {exp.icon}
+                      </div>
+                    )}
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
