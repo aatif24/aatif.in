@@ -75,6 +75,33 @@ const Portfolio = () => {
     }
   ];
 
+  const industries = [
+    {
+      name: "Aviation",
+      description: "In-flight connectivity and entertainment systems serving 1500+ aircraft globally",
+      icon: <Rocket className="w-6 h-6" />,
+      color: "bg-cyan-50 text-cyan-700 border-cyan-200"
+    },
+    {
+      name: "Healthcare",
+      description: "Digital health platforms connecting patients with healthcare providers",
+      icon: <Brain className="w-6 h-6" />,
+      color: "bg-indigo-50 text-indigo-700 border-indigo-200"
+    },
+    {
+      name: "Enterprise",
+      description: "Enterprise software solutions for monitoring, analytics, and operational efficiency",
+      icon: <Database className="w-6 h-6" />,
+      color: "bg-emerald-50 text-emerald-700 border-emerald-200"
+    },
+    {
+      name: "E-commerce",
+      description: "Scalable platforms for online retail and digital commerce",
+      icon: <Globe className="w-6 h-6" />,
+      color: "bg-amber-50 text-amber-700 border-amber-200"
+    }
+  ];
+
   const skills = {
     "Core & GenAI": ["Node.js", "TypeScript", "GenAI Integration", "System Design", "Distributed Systems"],
     "Cloud Native": ["AWS Lambda", "API Gateway", "SQS/SNS", "S3", "DynamoDB", "Docker"],
@@ -118,13 +145,13 @@ I would strongly recommend him to lead and contribute to any project involving m
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-cyan-100 selection:text-cyan-900">
 
       {/* Navigation */}
-      <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full px-4 md:px-6 py-2 md:py-3 shadow-sm max-w-[calc(100vw-2rem)]" aria-label="Main navigation">
-        <div className="flex gap-3 md:gap-6 text-xs md:text-sm font-medium text-slate-500 overflow-x-auto scrollbar-hide">
+      <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 bg-white/80 backdrop-blur-md border border-slate-200 rounded-full px-3 md:px-6 py-2 md:py-3 shadow-sm max-w-[calc(100vw-2rem)]" aria-label="Main navigation">
+        <div className="flex gap-2 md:gap-6 text-xs md:text-sm font-medium text-slate-500 overflow-x-auto scrollbar-hide">
           {['Home', 'About', 'Experience', 'Skills'].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
-              className={`hover:text-slate-900 transition-colors whitespace-nowrap px-2 py-1 ${activeSection === item.toLowerCase() ? 'text-slate-900 font-bold' : ''}`}
+              className={`hover:text-slate-900 transition-colors whitespace-nowrap px-1.5 md:px-2 py-1 ${activeSection === item.toLowerCase() ? 'text-slate-900 font-bold' : ''}`}
               aria-label={`Navigate to ${item} section`}
               aria-current={activeSection === item.toLowerCase() ? 'page' : undefined}
             >
@@ -133,7 +160,7 @@ I would strongly recommend him to lead and contribute to any project involving m
           ))}
           <button
             onClick={() => scrollToSection('recommendations')}
-            className={`hover:text-slate-900 transition-colors whitespace-nowrap px-2 py-1 ${activeSection === 'recommendations' ? 'text-slate-900 font-bold' : ''}`}
+            className={`hover:text-slate-900 transition-colors whitespace-nowrap px-1.5 md:px-2 py-1 ${activeSection === 'recommendations' ? 'text-slate-900 font-bold' : ''}`}
             aria-label="Navigate to Recommendations section"
             aria-current={activeSection === 'recommendations' ? 'page' : undefined}
           >
@@ -152,7 +179,7 @@ I would strongly recommend him to lead and contribute to any project involving m
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto space-y-8"
+          className="text-center max-w-4xl mx-auto space-y-8 w-full"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 rounded-full text-xs font-bold tracking-wider text-slate-600 uppercase mb-4">
             <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
@@ -167,7 +194,7 @@ I would strongly recommend him to lead and contribute to any project involving m
             Lead Engineer & Fullstack Specialist building <span className="font-medium text-slate-900 bg-cyan-50 px-1 rounded">scalable cloud systems</span> and <span className="font-medium text-slate-900 bg-indigo-50 px-1 rounded">GenAI solutions</span>.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pt-8 w-full max-w-md">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center pt-8 w-full px-4">
             <a href="https://www.linkedin.com/in/aatif24/" target="_blank" rel="noopener noreferrer"
               className="px-6 md:px-8 py-3 md:py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-lg shadow-slate-200 hover:shadow-xl hover:-translate-y-1"
               aria-label="Connect with Aatif on LinkedIn">
@@ -215,6 +242,35 @@ I would strongly recommend him to lead and contribute to any project involving m
               </div>
               <div className="text-3xl font-bold text-slate-900 font-heading">{stat.value}</div>
               <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">{stat.label}</div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Industries Section */}
+      <section className="py-20 md:py-32 px-4 md:px-6 max-w-7xl mx-auto" aria-label="Industries section">
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-3xl sm:text-4xl font-bold font-heading text-slate-900 mb-4">Industries & Domains</h2>
+          <p className="text-slate-500 text-sm md:text-base">Diverse experience across multiple sectors delivering impactful solutions</p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {industries.map((industry, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={`p-6 md:p-8 rounded-2xl border-2 ${industry.color} hover:shadow-lg transition-all`}
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-3 bg-white rounded-xl shadow-sm">
+                  {industry.icon}
+                </div>
+                <h3 className="text-xl font-bold">{industry.name}</h3>
+                <p className="text-sm leading-relaxed opacity-90">{industry.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>
