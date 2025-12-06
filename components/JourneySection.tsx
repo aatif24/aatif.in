@@ -23,7 +23,7 @@ export const JourneySection: React.FC = () => {
                     <SectionHeading lines={['JOUR', 'NEY']} opacities={[100, 50]} size="small" />
                 </div>
 
-                <div className="space-y-8 md:space-y-10">
+                <div className="space-y-6 md:space-y-10">
                     {experiences.map((exp, i) => (
                         <motion.div
                             key={i}

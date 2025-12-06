@@ -34,14 +34,14 @@ export const ManifestoSection: React.FC = () => {
                     </motion.div>
 
                     {/* Principles & Proof - Right Column */}
-                    <div className="md:col-span-7 space-y-12">
+                    <div className="md:col-span-7 space-y-10">
                         {/* Point 1 */}
                         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="group">
-                            <h4 className="text-2xl md:text-4xl font-black text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                            <h4 className="text-xl md:text-4xl font-black text-foreground/80 mb-2 group-hover:text-primary transition-colors duration-300">
                                 SCALE IS NON-NEGOTIABLE.
                             </h4>
                             <div className="h-px w-12 bg-primary mb-4 " />
-                            <p className="text-base text-muted-foreground font-light  opacity-80">
+                            <p className="text-base text-muted-foreground font-light  opacity-80 text-sm md:text-base">
                                 <span className="text-foreground font-medium">Built on the belief that systems should grow effortlessly, not chaotically. </span>
                                 <span className="text-foreground font-medium block">Expansion should feel natural, not dramatic.</span>
                             </p>
@@ -49,22 +49,22 @@ export const ManifestoSection: React.FC = () => {
 
                         {/* Point 2 */}
                         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="group">
-                            <h4 className="text-2xl md:text-4xl font-black text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                            <h4 className="text-xl md:text-4xl font-black text-foreground/80 mb-2 group-hover:text-primary transition-colors duration-300">
                                 RELIABILITY IS A QUIET ART.
                             </h4>
                             <div className="h-px w-12 bg-primary mb-4" />
-                            <p className="text-base text-muted-foreground font-light  opacity-80">
+                            <p className="text-base text-muted-foreground font-light  opacity-80 text-sm md:text-base">
                                 <span className="text-foreground font-medium">The best systems rarely shout for attention, they're too busy working.</span>
                             </p>
                         </motion.div>
 
                         {/* Point 3 */}
                         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="group">
-                            <h4 className="text-2xl md:text-4xl font-black text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                            <h4 className="text-xl md:text-4xl font-black text-foreground/80 mb-2 group-hover:text-primary transition-colors duration-300">
                                 SPEED AS A STANDARD.
                             </h4>
                             <div className="h-px w-12 bg-primary mb-4" />
-                            <p className="text-base text-muted-foreground font-light opacity-80">
+                            <p className="text-base text-muted-foreground font-light opacity-80 text-sm md:text-base">
                                 <span className="text-foreground font-medium">True velocity emerges from clarity, not chaos.</span>
                                 <span className="text-foreground font-medium block"> From design, not desperation.</span>
                             </p>
