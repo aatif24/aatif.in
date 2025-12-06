@@ -58,7 +58,7 @@ export const EndorsedSection: React.FC = () => {
     return (
         <section id="recommendations" className="px-4 md:px-6 min-h-screen snap-start flex items-center relative overflow-hidden" aria-label="Recommendations section">
             {/* Geometric box frame - increased padding on mobile */}
-            <div className="absolute inset-8 border border-border pointer-events-none" />
+            <div className="absolute inset-8 border border-border border-l-0 pointer-events-none" />
 
             <div className="max-w-6xl mx-auto w-full py-12 md:py-0">
                 <div className="mb-8 md:mb-12">

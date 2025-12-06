@@ -27,10 +27,10 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, scrollToS
 
     return (
         <motion.nav
-            layout
             className="fixed md:sticky top-4 md:top-6 right-4 md:right-auto md:left-0 md:mx-auto z-50 w-fit"
             initial={false}
             aria-label="Main navigation"
+            style={{ transform: "translate3d(0,0,0)" }} // Force hardware acceleration for Safari
         >
             <motion.div
                 layout
