@@ -233,6 +233,7 @@ I would strongly recommend him to lead and contribute to any project involving m
 
         {/* Bottom Connect Links */}
         <div className="absolute bottom-12 right-6 md:right-12 flex gap-6 text-sm font-bold tracking-widest uppercase">
+          <a href="/Aatif Shaikh – Lead Fullstack Engineer (Node.js - TypeScript - AWS).pdf" download target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">Resume</a>
           <a href="https://www.linkedin.com/in/aatif24/" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">LinkedIn</a>
           <a href="https://github.com/aatif24" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">GitHub</a>
         </div>
