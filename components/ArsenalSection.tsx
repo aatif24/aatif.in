@@ -6,7 +6,7 @@ import { SectionHeading } from './SectionHeading';
 
 export const ArsenalSection: React.FC = () => {
     return (
-        <section id="skills" className="px-4 md:px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center relative" aria-label="Skills section">
+        <section id="skills" className="px-4 md:px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center relative overflow-hidden" aria-label="Skills section">
             {/* Geometric line accents - hidden on mobile */}
             <div className="hidden md:block absolute top-1/4 left-12 w-px h-32 bg-border" />
             <div className="hidden md:block absolute bottom-1/4 right-12 w-32 h-px bg-border" />

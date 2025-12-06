@@ -5,10 +5,11 @@ import { SectionHeading } from './SectionHeading';
 
 export const PhilosophySection: React.FC = () => {
     return (
-        <section id="about" className="px-4 md:px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center relative" aria-label="About section">
+        <section id="about" className="px-4 md:px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center relative overflow-hidden" aria-label="About section">
             {/* Geometric accent shapes - hidden on mobile */}
             <div className="hidden md:block absolute top-1/3 left-0 w-16 h-px bg-border" />
             <div className="hidden md:block absolute bottom-1/3 right-12 w-px h-16 bg-border" />
+            <div className="hidden md:block absolute top-1/2 right-1/4 w-10 h-10 rounded-full border border-border" />
 
             <div className="w-full space-y-8 md:space-y-12">
                 {/* Heading positioned top-left */}

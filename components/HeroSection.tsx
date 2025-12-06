@@ -7,6 +7,10 @@ export const HeroSection: React.FC = () => {
     return (
         <section id="home" className="min-h-screen snap-start relative overflow-hidden px-6 pt-24 pb-12 flex flex-col justify-between" aria-label="Hero section">
 
+            {/* Geometric shapes - Bauhaus accent */}
+            <div className="hidden md:block absolute top-1/4 right-24 w-16 h-16 border-2 border-border rounded-full" />
+            <div className="hidden md:block absolute bottom-1/4 left-24 w-24 h-px bg-border" />
+
             {/* Top Right Info Block */}
             <motion.div
                 initial={{ opacity: 0, x: 20 }}

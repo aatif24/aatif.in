@@ -76,9 +76,11 @@ html {
   @apply snap-y snap-mandatory scroll-smooth;
 }
 
-
 body {
   @apply bg-background text-foreground;
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
 }
 
 /* Hide scrollbar for navigation on mobile */

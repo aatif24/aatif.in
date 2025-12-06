@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export const StatsSection: React.FC = () => {
     return (
-        <section className="min-h-screen snap-start relative px-4 md:px-6 flex items-center" aria-label="Statistics">
+        <section className="min-h-screen snap-start relative px-4 md:px-6 flex items-center overflow-hidden" aria-label="Statistics">
             <div className="max-w-7xl mx-auto w-full relative">
                 {/* Geometric accent lines - hidden on mobile */}
                 <div className="hidden md:block absolute top-0 left-0 w-px h-48 bg-border" />
