@@ -8,6 +8,7 @@ import { PhilosophySection } from '@/components/PhilosophySection';
 import { JourneySection } from '@/components/JourneySection';
 import { ArsenalSection } from '@/components/ArsenalSection';
 import { EndorsedSection } from '@/components/EndorsedSection';
+import { Footer } from '@/components/Footer';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -50,6 +51,7 @@ const Portfolio = () => {
       <JourneySection />
       <ArsenalSection />
       <EndorsedSection />
+      <Footer />
     </div>
   );
 };
