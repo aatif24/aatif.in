@@ -2,9 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Navigation } from '@/components/Navigation';
 import { HeroSection } from '@/components/HeroSection';
-import { StatsSection } from '@/components/StatsSection';
 import { SectorsSection } from '@/components/SectorsSection';
-import { PhilosophySection } from '@/components/PhilosophySection';
+import { ManifestoSection } from '@/components/ManifestoSection';
 import { JourneySection } from '@/components/JourneySection';
 import { ArsenalSection } from '@/components/ArsenalSection';
 import { EndorsedSection } from '@/components/EndorsedSection';
@@ -45,9 +44,8 @@ const Portfolio = () => {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
       <HeroSection />
-      <StatsSection />
       <SectorsSection />
-      <PhilosophySection />
+      <ManifestoSection />
       <JourneySection />
       <ArsenalSection />
       <EndorsedSection />

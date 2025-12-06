@@ -9,9 +9,9 @@ export const JourneySection: React.FC = () => {
         <section id="experience" className="px-4 md:px-6 min-h-screen snap-start flex items-center relative overflow-hidden" aria-label="Experience section">
             {/* Geometric grid accent - hidden on mobile */}
             <div className="hidden md:grid absolute top-12 right-12 grid-cols-3 gap-3">
+                <div className="w-3 h-3 border border-primary" />
                 <div className="w-3 h-3 border border-border" />
-                <div className="w-3 h-3 border border-border" />
-                <div className="w-3 h-3 border border-border" />
+                <div className="w-3 h-3 bg-primary" />
             </div>
 
             <div className="max-w-6xl mx-auto w-full">
