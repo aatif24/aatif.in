@@ -1,16 +1,48 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({
+                x: (e.clientX / window.innerWidth - 0.5) * 20,
+                y: (e.clientY / window.innerHeight - 0.5) * 20
+            });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
     return (
         <section id="home" className="min-h-screen snap-start relative overflow-hidden px-6 pt-24 pb-12 flex flex-col justify-between" aria-label="Hero section">
 
-            {/* Geometric shapes - Bauhaus accent */}
-            <div className="absolute md:top-[15%] md:left-[10%] w-3 h-3 bg-primary rounded-full animate-pulse" />
-            <div className="hidden md:block absolute top-1/4 right-24 w-16 h-16 border-2 border-border rounded-full" />
-            <div className="hidden md:block absolute bottom-1/4 left-24 w-24 h-px bg-border" />
+            {/* Geometric shapes - Bauhaus accent with parallax */}
+            <motion.div
+                className="absolute md:top-[15%] md:left-[10%] w-3 h-3 bg-primary rounded-full animate-pulse"
+                style={{
+                    x: mousePosition.x * 0.5,
+                    y: mousePosition.y * 0.5,
+                }}
+            />
+            <motion.div
+                className="hidden md:block absolute top-1/4 right-24 w-16 h-16 border-2 border-border rounded-full"
+                style={{
+                    x: mousePosition.x * -0.3,
+                    y: mousePosition.y * -0.3,
+                }}
+            />
+            <motion.div
+                className="hidden md:block absolute bottom-1/4 left-24 w-24 h-px bg-border"
+                style={{
+                    x: mousePosition.x * 0.7,
+                    y: mousePosition.y * 0.2,
+                }}
+            />
 
             {/* Sprinkled Stats - Mobile (Hidden) & Desktop (Absolute) */}
 

@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 interface NavigationProps {
     activeSection: string;
@@ -10,6 +11,7 @@ interface NavigationProps {
 
 export const Navigation: React.FC<NavigationProps> = ({ activeSection, scrollToSection }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrollProgress, setScrollProgress] = useState(0);
 
     const navItems = ['Home', 'About', 'Experience', 'Skills', 'Recs'];
     const navMap: Record<string, string> = {
@@ -19,6 +21,20 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, scrollToS
         'Skills': 'skills',
         'Recs': 'recommendations'
     };
+
+    // Track scroll progress
+    useEffect(() => {
+        const updateScrollProgress = () => {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / scrollHeight) * 100;
+            setScrollProgress(scrolled);
+        };
+
+        window.addEventListener('scroll', updateScrollProgress);
+        updateScrollProgress();
+        
+        return () => window.removeEventListener('scroll', updateScrollProgress);
+    }, []);
 
     const handleNavClick = (sectionId: string) => {
         scrollToSection(sectionId);
@@ -30,13 +46,20 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, scrollToS
             className="fixed md:sticky top-4 md:top-6 right-4 md:right-auto md:left-0 md:mx-auto z-50 w-fit"
             initial={false}
             aria-label="Main navigation"
-            style={{ transform: "translate3d(0,0,0)" }} // Force hardware acceleration for Safari
+            style={{ transform: "translate3d(0,0,0)" }}
         >
             <motion.div
                 layout
-                className="bg-background/80 backdrop-blur-md border border-border rounded-full px-2 py-2 md:px-6 md:py-3 shadow-sm overflow-hidden"
+                className="bg-background/80 backdrop-blur-md border border-border rounded-full px-2 py-2 md:px-6 md:py-3 shadow-sm overflow-hidden relative"
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
+                {/* Progress indicator */}
+                <motion.div
+                    className="absolute bottom-0 left-0 h-0.5 bg-primary rounded-full"
+                    style={{ width: `${scrollProgress}%` }}
+                    transition={{ duration: 0.1 }}
+                />
+                
                 <div className="flex items-center">
                     {/* Mobile: Toggle button + expandable nav */}
                     <div className="md:hidden flex items-center">
@@ -86,12 +109,19 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, scrollToS
                                 <button
                                     key={item}
                                     onClick={() => scrollToSection(sectionId)}
-                                    className={`hover:text-foreground transition-colors whitespace-nowrap px-3 py-1 ${activeSection === sectionId ? 'text-foreground font-bold' : ''
+                                    className={`hover:text-foreground transition-colors whitespace-nowrap px-3 py-1 relative ${activeSection === sectionId ? 'text-foreground font-bold' : ''
                                         }`}
                                     aria-label={`Navigate to ${item} section`}
                                     aria-current={activeSection === sectionId ? 'page' : undefined}
                                 >
                                     {item}
+                                    {activeSection === sectionId && (
+                                        <motion.div
+                                            layoutId="activeIndicator"
+                                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
                                 </button>
                             );
                         })}

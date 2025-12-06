@@ -1,8 +1,24 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { skills } from '@/lib/portfolio-data';
-import { SectionHeading } from './SectionHeading';
+
+// Mock data - replace with your actual data import
+const skills = {
+    "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    "Backend": ["Node.js", "Express", "GraphQL", "REST APIs"],
+    "Cloud": ["AWS", "Docker", "Kubernetes", "Terraform"],
+    "Database": ["PostgreSQL", "MongoDB", "Redis", "DynamoDB"]
+};
+
+const SectionHeading = ({ lines, opacities, size }: any) => (
+    <h2 className="font-bold font-heading text-6xl md:text-9xl leading-none tracking-tighter">
+        {lines.map((line: string, i: number) => (
+            <span key={i} className={`block ${i > 0 ? '-mt-[0.5em]' : ''}`} style={{ opacity: opacities[i] / 100 }}>
+                {line}
+            </span>
+        ))}
+    </h2>
+);
 
 export const ArsenalSection: React.FC = () => {
     return (
@@ -24,16 +40,38 @@ export const ArsenalSection: React.FC = () => {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.15 }}
-                            className="space-y-3 md:space-y-4"
+                            className="space-y-3 md:space-y-4 group"
                         >
-                            <div className="border-b border-border pb-2">
+                            <div className="border-b-2 border-primary/30 group-hover:border-primary transition-colors pb-2 relative">
                                 <h3 className="text-xs uppercase tracking-widest text-foreground font-bold">{category}</h3>
+                                {/* Animated underline */}
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: '100%' }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.15 + 0.3, duration: 0.5 }}
+                                    className="absolute bottom-0 left-0 h-0.5 bg-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                                />
                             </div>
                             <div className="space-y-2">
                                 {items.map((skill, j) => (
-                                    <div key={j} className="text-sm text-muted-foreground font-light">
-                                        {skill}
-                                    </div>
+                                    <motion.div
+                                        key={j}
+                                        initial={{ opacity: 0, x: -10 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.15 + j * 0.05 }}
+                                        className="flex items-center gap-2 group/skill"
+                                    >
+                                        {/* Skill dot indicator */}
+                                        <motion.div
+                                            className="w-1.5 h-1.5 rounded-full bg-muted-foreground group-hover/skill:bg-primary transition-colors flex-shrink-0"
+                                            whileHover={{ scale: 1.5 }}
+                                        />
+                                        <div className="text-sm text-muted-foreground font-light group-hover/skill:text-foreground transition-colors">
+                                            {skill}
+                                        </div>
+                                    </motion.div>
                                 ))}
                             </div>
                         </motion.div>

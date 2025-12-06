@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading';
 
 export const ManifestoSection: React.FC = () => {
     return (
-        <section id="manifesto" className="min-h-screen snap-start px-4 md:px-6 max-w-7xl mx-auto flex items-center relative overflow-hidden" aria-label="Manifesto section">
+        <section id="about" className="min-h-screen snap-start px-4 md:px-6 max-w-7xl mx-auto flex items-center relative overflow-hidden" aria-label="Manifesto section">
             {/* Geometric accents - hidden on mobile */}
             <div className="hidden md:block absolute top-1/2 left-12 w-48 h-48 border rounded-full border-border/50 -translate-y-1/2" />
             <div className="hidden md:block absolute bottom-24 right-24 w-4 h-4 bg-primary rotate-45" />

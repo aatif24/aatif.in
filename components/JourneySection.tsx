@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { experiences } from '@/lib/portfolio-data';
 import { SectionHeading } from './SectionHeading';
 
+
 export const JourneySection: React.FC = () => {
     return (
         <section id="experience" className="px-4 md:px-6 min-h-screen snap-start flex items-center relative overflow-hidden" aria-label="Experience section">
@@ -14,9 +15,12 @@ export const JourneySection: React.FC = () => {
                 <div className="w-3 h-3 bg-primary" />
             </div>
 
-            <div className="max-w-6xl mx-auto w-full">
+            <div className="max-w-6xl mx-auto w-full relative">
+                {/* Timeline connector line */}
+                <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden md:block" />
+
                 <div className="mb-8 md:mb-12">
-                    <SectionHeading lines={['JOUR', 'NEY']} opacities={[100, 50]} size="large" />
+                    <SectionHeading lines={['JOUR', 'NEY']} opacities={[100, 50]} size="small" />
                 </div>
 
                 <div className="space-y-8 md:space-y-10">
@@ -27,9 +31,27 @@ export const JourneySection: React.FC = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.15 }}
-                            className={`max-w-2xl ${i % 2 === 0 ? '' : 'md:ml-auto md:text-right'}`}
+                            className={`max-w-2xl relative ${i % 2 === 0 ? '' : 'md:ml-auto md:text-right'}`}
                         >
-                            <div className="space-y-3">
+                            {/* Timeline node */}
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                whileInView={{ scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.15 + 0.3 }}
+                                className={`hidden md:block absolute top-8 ${i % 2 === 0 ? '-right-[calc(50vw-50%+0.5rem)]' : '-left-[calc(50vw-50%+0.5rem)]'} w-3 h-3 bg-primary rounded-full border-2 border-background z-10`}
+                            />
+                            
+                            {/* Connector line to timeline */}
+                            <motion.div
+                                initial={{ width: 0 }}
+                                whileInView={{ width: 'calc(50vw - 50% - 1rem)' }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.15 + 0.2, duration: 0.5 }}
+                                className={`hidden md:block absolute top-[calc(2rem+0.25rem)] ${i % 2 === 0 ? '-right-[calc(50vw-50%)]' : '-left-[calc(50vw-50%)]'} h-px bg-primary/30`}
+                            />
+
+                            <div className="space-y-3 relative pl-4 md:pl-0 border-l-2 md:border-l-0 border-primary/30">
                                 <div>
                                     <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">{exp.period}</div>
                                     <h3 className="text-2xl md:text-3xl font-bold text-foreground font-heading mb-1">{exp.role}</h3>

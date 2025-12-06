@@ -14,41 +14,48 @@ const MobileRecommendationCard = ({ rec, index }: { rec: typeof recommendations[
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="space-y-3"
+            className="relative pl-4 border-l-2 border-primary/30 hover:border-primary/60 transition-colors"
         >
-            <div>
-                <h3 className="text-base font-bold text-foreground mb-1">{rec.name}</h3>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">{rec.title}</p>
-            </div>
-            <div className="w-10 h-px bg-border" />
+            <div className="space-y-3">
+                <div>
+                    <h3 className="text-base font-bold text-foreground mb-1">{rec.name}</h3>
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground">{rec.title}</p>
+                </div>
 
-            <div className="relative">
-                <motion.div
-                    initial={false}
-                    animate={{ height: isExpanded ? 'auto' : '4.5rem' }} // approx 3 lines (1.5rem line-height * 3)
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                >
-                    <p className="text-sm leading-relaxed text-muted-foreground font-light whitespace-pre-line">
-                        {rec.text}
-                    </p>
-                </motion.div>
+                <div className="relative">
+                    <motion.div
+                        initial={false}
+                        animate={{ height: isExpanded ? 'auto' : '4.5rem' }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                    >
+                        <p className="text-sm leading-relaxed text-muted-foreground font-light whitespace-pre-line">
+                            {rec.text}
+                        </p>
+                    </motion.div>
 
-                {/* Gradient overlay when collapsed */}
-                {!isExpanded && (
-                    <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-                )}
-
-                <button
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="mt-2 text-xs uppercase tracking-widest font-bold text-foreground hover:text-muted-foreground transition-colors flex items-center gap-1 relative z-10"
-                >
-                    {isExpanded ? (
-                        <>Show Less <ChevronUp className="w-3 h-3" /></>
-                    ) : (
-                        <>Read More <ChevronDown className="w-3 h-3" /></>
+                    {/* Gradient overlay when collapsed */}
+                    {!isExpanded && (
+                        <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
                     )}
-                </button>
+
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="mt-3 text-xs uppercase tracking-widest font-bold text-primary hover:text-foreground transition-colors flex items-center gap-1.5 relative z-10 group"
+                    >
+                        {isExpanded ? (
+                            <>
+                                Show Less
+                                <ChevronUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
+                            </>
+                        ) : (
+                            <>
+                                Read More
+                                <ChevronDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+                            </>
+                        )}
+                    </button>
+                </div>
             </div>
         </motion.div>
     );
