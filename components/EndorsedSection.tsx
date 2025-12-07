@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { recommendations } from '@/lib/portfolio-data';
+import { Recommendation } from '@/lib/strapi';
 import { SectionHeading } from './SectionHeading';
 
-const MobileRecommendationCard = ({ rec, index }: { rec: typeof recommendations[0], index: number }) => {
+const MobileRecommendationCard = ({ rec, index }: { rec: Recommendation, index: number }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
@@ -18,8 +19,8 @@ const MobileRecommendationCard = ({ rec, index }: { rec: typeof recommendations[
         >
             <div className="space-y-3">
                 <div>
-                    <h3 className="text-base font-bold text-foreground mb-1">{rec.name}</h3>
-                    <p className="text-xs uppercase tracking-widest text-muted-foreground">{rec.title}</p>
+                    <h3 className="text-base font-bold text-foreground mb-1">{rec.authorName}</h3>
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground">{rec.authorTitle}</p>
                 </div>
 
                 <div className="relative">
@@ -30,7 +31,7 @@ const MobileRecommendationCard = ({ rec, index }: { rec: typeof recommendations[
                         className="overflow-hidden"
                     >
                         <p className="text-sm leading-relaxed text-muted-foreground font-light whitespace-pre-line">
-                            {rec.text}
+                            {rec.testimony}
                         </p>
                     </motion.div>
 
@@ -61,7 +62,13 @@ const MobileRecommendationCard = ({ rec, index }: { rec: typeof recommendations[
     );
 };
 
-export const EndorsedSection: React.FC = () => {
+// Define props interface for EndorsedSection
+interface EndorsedSectionProps {
+    recommendations: Recommendation[];
+}
+
+// Updated EndorsedSection to accept recommendations as a prop
+export const EndorsedSection: React.FC<EndorsedSectionProps> = ({ recommendations }) => {
     return (
         <section id="recommendations" className="px-4 md:px-6 min-h-screen snap-start flex items-center relative overflow-hidden" aria-label="Recommendations section">
             {/* Geometric box frame - increased padding on mobile */}
@@ -69,7 +76,7 @@ export const EndorsedSection: React.FC = () => {
 
             <div className="max-w-6xl mx-auto w-full py-12 md:py-0">
                 <div className="mb-8 md:mb-12">
-                    <SectionHeading lines={['ENDOR', 'SED']} opacities={[100, 50]} size="default" />
+                    <SectionHeading lines={['ENDOR', 'SED']} opacities={[100, 50]} size="large" /> {/* Changed size to "large" */}
                     <a
                         href="https://www.linkedin.com/in/aatif24/details/recommendations/?detailScreenTabIndex=0"
                         target="_blank"
@@ -102,12 +109,12 @@ export const EndorsedSection: React.FC = () => {
                             >
                                 <div className="space-y-3 md:space-y-4">
                                     <div>
-                                        <h3 className="text-base md:text-lg font-bold text-foreground mb-1">{rec.name}</h3>
-                                        <p className="text-xs uppercase tracking-widest text-muted-foreground">{rec.title}</p>
+                                        <h3 className="text-base md:text-lg font-bold text-foreground mb-1">{rec.authorName}</h3>
+                                        <p className="text-xs uppercase tracking-widest text-muted-foreground">{rec.authorTitle}</p>
                                     </div>
                                     <div className="w-10 md:w-12 h-px bg-border" />
                                     <p className="text-sm leading-relaxed text-muted-foreground font-light whitespace-pre-line">
-                                        {rec.text}
+                                        {rec.testimony}
                                     </p>
                                 </div>
                             </motion.div>
@@ -127,12 +134,12 @@ export const EndorsedSection: React.FC = () => {
                             >
                                 <div className="space-y-3 md:space-y-4">
                                     <div>
-                                        <h3 className="text-base md:text-lg font-bold text-foreground mb-1">{rec.name}</h3>
-                                        <p className="text-xs uppercase tracking-widest text-muted-foreground">{rec.title}</p>
+                                        <h3 className="text-base md:text-lg font-bold text-foreground mb-1">{rec.authorName}</h3>
+                                        <p className="text-xs uppercase tracking-widest text-muted-foreground">{rec.authorTitle}</p>
                                     </div>
                                     <div className="w-10 md:w-12 h-px bg-border" />
                                     <p className="text-sm leading-relaxed text-muted-foreground font-light whitespace-pre-line">
-                                        {rec.text}
+                                        {rec.testimony}
                                     </p>
                                 </div>
                             </motion.div>

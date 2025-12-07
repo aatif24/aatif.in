@@ -1,57 +1,9 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import { Navigation } from '@/components/Navigation';
-import { HeroSection } from '@/components/HeroSection';
-import { SectorsSection } from '@/components/SectorsSection';
-import { ManifestoSection } from '@/components/ManifestoSection';
-import { JourneySection } from '@/components/JourneySection';
-import { ArsenalSection } from '@/components/ArsenalSection';
-import { EndorsedSection } from '@/components/EndorsedSection';
-import { Footer } from '@/components/Footer';
+import { fetchPortfolioData } from '@/lib/strapi';
+import { PortfolioClient } from '@/components/PortfolioClient';
 
-const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('home');
-
-  // Smooth scroll to section
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Update active section on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'experience', 'skills', 'recommendations'];
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 150 && rect.bottom >= 150;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+export default async function Home() {
+  const data = await fetchPortfolioData();
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
-      <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
-      <HeroSection />
-      <SectorsSection />
-      <ManifestoSection />
-      <JourneySection />
-      <ArsenalSection />
-      <EndorsedSection />
-      <Footer />
-    </div>
+    <PortfolioClient {...data} />
   );
 };
-
-export default Portfolio;

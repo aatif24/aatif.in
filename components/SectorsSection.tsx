@@ -1,10 +1,14 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { industries } from '@/lib/portfolio-data';
 import { SectionHeading } from './SectionHeading';
+import { Industry } from '@/lib/strapi';
 
-export const SectorsSection: React.FC = () => {
+interface SectorsSectionProps {
+    industries: Industry[];
+}
+
+export const SectorsSection: React.FC<SectorsSectionProps> = ({ industries }) => {
     return (
         <section className="min-h-screen snap-start px-4 md:px-6 max-w-7xl mx-auto flex items-center relative overflow-hidden" aria-label="Industries section">
             {/* Geometric box accent - hidden on mobile */}
@@ -13,27 +17,27 @@ export const SectorsSection: React.FC = () => {
 
             <div className="w-full relative">
                 <div className="mb-8 md:mb-12">
-                    <SectionHeading lines={['SEC', 'TORS']} opacities={[100, 50]} size="large" className="mb-4 md:mb-6" />
+                    <SectionHeading lines={['SEC', 'TORS']} opacities={[100, 50]} size="large" />
                 </div>
 
-                {/* Asymmetric scattered layout */}
-                <div className="space-y-8 md:space-y-12">
-                    {industries.map((industry, i) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 md:gap-y-24 max-w-5xl mx-auto">
+                    {industries.map((industry, index) => (
                         <motion.div
-                            key={i}
-                            initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            key={index}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.15 }}
-                            className={`max-w-md ${i % 2 === 0 ? '' : 'md:ml-auto'}`}
+                            transition={{ delay: index * 0.2 }}
+                            className={`flex group ${index % 2 !== 0 ? 'md:mt-32' : ''}`}
                         >
-                            {/* Geometric line marker */}
-                            <div className="flex items-start gap-4 md:gap-6">
-                                <div className="w-6 md:w-8 h-px bg-foreground mt-4 md:mt-6 flex-shrink-0" />
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-foreground font-heading mb-2">{industry.name}</h3>
-                                    <p className="text-sm leading-relaxed text-muted-foreground font-light">{industry.description}</p>
-                                </div>
+                            {/* Horizontal Line Accent */}
+                            <div className="w-8 h-px bg-muted-foreground/60 mt-3 mr-4 shrink-0 transition-all duration-300 group-hover:w-12 group-hover:bg-primary" />
+
+                            <div className="space-y-2">
+                                <h3 className="text-2xl font-bold text-foreground font-heading">{industry.name}</h3>
+                                <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-xs">
+                                    {industry.description}
+                                </p>
                             </div>
                         </motion.div>
                     ))}

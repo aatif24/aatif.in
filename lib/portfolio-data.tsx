@@ -1,5 +1,3 @@
-import { Plane, Heart, Building2, ShoppingCart, Rocket, Code2, Activity, Server } from 'lucide-react';
-
 export const experiences = [
     {
         company: "AirFi",
@@ -9,7 +7,7 @@ export const experiences = [
         tags: ["AWS Serverless", "GenAI", "Node.js", "System Design"],
         color: "bg-cyan-50 text-cyan-700 border-cyan-100",
         logo: "https://logo.clearbit.com/airfi.aero",
-        icon: <Rocket className="w-5 h-5" />
+        icon: "Rocket"
     },
     {
         company: "Bombayworks",
@@ -19,7 +17,7 @@ export const experiences = [
         tags: ["React", "Node.js", "MySQL", "Monitoring"],
         color: "bg-indigo-50 text-indigo-700 border-indigo-100",
         logo: "https://logo.clearbit.com/bombayworks.com",
-        icon: <Code2 className="w-5 h-5" />
+        icon: "Code2"
     },
     {
         company: "HealthDekho",
@@ -29,7 +27,7 @@ export const experiences = [
         tags: ["Microservices", "Team Leadership", "Migration"],
         color: "bg-emerald-50 text-emerald-700 border-emerald-100",
         logo: "https://logo.clearbit.com/healthdekho.com",
-        icon: <Activity className="w-5 h-5" />
+        icon: "Activity"
     },
     {
         company: "Codebox",
@@ -39,7 +37,7 @@ export const experiences = [
         tags: ["PHP", "JavaScript", "Fullstack"],
         color: "bg-slate-50 text-slate-700 border-slate-100",
         logo: "https://logo.clearbit.com/codebox.in",
-        icon: <Server className="w-5 h-5" />
+        icon: "Server"
     }
 ];
 
@@ -47,25 +45,25 @@ export const industries = [
     {
         name: "Aviation",
         description: "In-flight connectivity and entertainment systems serving 1500+ aircraft globally",
-        icon: <Plane className="w-6 h-6" />,
+        icon: "Plane",
         color: "bg-cyan-50 text-cyan-700 border-cyan-200"
     },
     {
         name: "Healthcare",
         description: "Digital health platforms connecting patients with healthcare providers",
-        icon: <Heart className="w-6 h-6" />,
+        icon: "Heart",
         color: "bg-indigo-50 text-indigo-700 border-indigo-200"
     },
     {
         name: "Enterprise",
         description: "Enterprise software solutions for monitoring, analytics, and operational efficiency",
-        icon: <Building2 className="w-6 h-6" />,
+        icon: "Building2",
         color: "bg-emerald-50 text-emerald-700 border-emerald-200"
     },
     {
         name: "E-commerce",
         description: "Scalable platforms for online retail and digital commerce",
-        icon: <ShoppingCart className="w-6 h-6" />,
+        icon: "ShoppingCart",
         color: "bg-amber-50 text-amber-700 border-amber-200"
     }
 ];

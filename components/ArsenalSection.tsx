@@ -1,14 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-
-// Mock data - replace with your actual data import
-const skills = {
-    "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    "Backend": ["Node.js", "Express", "GraphQL", "REST APIs"],
-    "Cloud": ["AWS", "Docker", "Kubernetes", "Terraform"],
-    "Database": ["PostgreSQL", "MongoDB", "Redis", "DynamoDB"]
-};
+import { SkillGroup } from '@/lib/strapi';
 
 const SectionHeading = ({ lines, opacities, size }: any) => (
     <h2 className="font-bold font-heading text-6xl md:text-9xl leading-none tracking-tighter">
@@ -20,7 +13,11 @@ const SectionHeading = ({ lines, opacities, size }: any) => (
     </h2>
 );
 
-export const ArsenalSection: React.FC = () => {
+interface ArsenalSectionProps {
+    skills: SkillGroup[];
+}
+
+export const ArsenalSection: React.FC<ArsenalSectionProps> = ({ skills }) => {
     return (
         <section id="skills" className="px-4 md:px-6 max-w-7xl mx-auto min-h-screen snap-start flex items-center relative overflow-hidden" aria-label="Skills section">
             {/* Geometric line accents - hidden on mobile */}
@@ -33,7 +30,7 @@ export const ArsenalSection: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-12 gap-x-6 md:gap-x-8">
-                    {Object.entries(skills).map(([category, items], i) => (
+                    {skills.map((group, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0 }}
@@ -43,7 +40,7 @@ export const ArsenalSection: React.FC = () => {
                             className="space-y-3 md:space-y-4 group"
                         >
                             <div className="border-b-2 border-primary/30 group-hover:border-primary transition-colors pb-2 relative">
-                                <h3 className="text-xs uppercase tracking-widest text-foreground font-bold">{category}</h3>
+                                <h3 className="text-xs uppercase tracking-widest text-foreground font-bold">{group.name}</h3>
                                 {/* Animated underline */}
                                 <motion.div
                                     initial={{ width: 0 }}
@@ -54,7 +51,7 @@ export const ArsenalSection: React.FC = () => {
                                 />
                             </div>
                             <div className="space-y-2">
-                                {items.map((skill, j) => (
+                                {group.skills.map((skill, j) => (
                                     <motion.div
                                         key={j}
                                         initial={{ opacity: 0, x: -10 }}
